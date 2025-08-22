@@ -12,7 +12,7 @@ namespace ContactManager
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //StarWindow is welcomeWin.cs and not the folder itself 
-            Application.Run(new WelcomeWin.WelcomeWin());
+            Application.Run(new MainWin.Main());
         }
     }
 }

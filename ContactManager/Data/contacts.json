@@ -1,0 +1,119 @@
+[
+    {
+        "FirstName": "Anna",
+        "LastName": "Müller",
+        "Phone Number": "+41 44 123 45 67",
+        "Canton": "ZH",
+        "Address": "Bahnhofstrasse 10, 8000 Zürich",
+        "EmployeeID": "0001",
+        "Job": "Engineer"
+    },
+    {
+        "FirstName": "Luca",
+        "LastName": "Meier",
+        "Phone Number": "+41 31 222 33 44",
+        "Canton": "BE",
+        "Address": "Hauptstrasse 5, 3000 Bern",
+        "EmployeeID": "0002",
+        "Job": "Teacher"
+    },
+    {
+        "FirstName": "Sophie",
+        "LastName": "Schmid",
+        "Phone Number": "+41 41 555 66 77",
+        "Canton": "LU",
+        "Address": "Seestrasse 12, 6000 Luzern",
+        "EmployeeID": "0003",
+        "Job": "Nurse"
+    },
+    {
+        "FirstName": "Noah",
+        "LastName": "Keller",
+        "Phone Number": "+41 58 201 22 33",
+        "Canton": "ZG",
+        "Address": "Gartenstrasse 3, 6300 Zug",
+        "EmployeeID": "0004",
+        "Job": "Architect"
+    },
+    {
+        "FirstName": "Mia",
+        "LastName": "Fischer",
+        "Phone Number": "+41 71 345 67 89",
+        "Canton": "SG",
+        "Address": "Schulweg 7, 9000 St. Gallen",
+        "EmployeeID": "0005",
+        "Job": "Doctor"
+    },
+    {
+        "FirstName": "Liam",
+        "LastName": "Huber",
+        "Phone Number": "+41 61 888 77 66",
+        "Canton": "BS",
+        "Address": "Kirchgasse 8, 4051 Basel",
+        "EmployeeID": "0006",
+        "Job": "Nurse"
+    },
+    {
+        "FirstName": "Emma",
+        "LastName": "Zimmermann",
+        "Phone Number": "+41 26 321 43 21",
+        "Canton": "FR",
+        "Address": "Dorfplatz 2, 1700 Fribourg",
+        "EmployeeID": "0007",
+        "Job": "Teacher"
+    },
+    {
+        "FirstName": "Jonas",
+        "LastName": "Frei",
+        "Phone Number": "+41 81 765 43 21",
+        "Canton": "GR",
+        "Address": "Bergstrasse 22, 7000 Chur",
+        "EmployeeID": "0008",
+        "Job": "Doctor"
+    },
+    {
+        "FirstName": "Lea",
+        "LastName": "Baumann",
+        "Phone Number": "+41 32 987 65 43",
+        "Canton": "SO",
+        "Address": "Sonnenweg 15, 4500 Solothurn",
+        "EmployeeID": "0009",
+        "Job": "Nurse"
+    },
+    {
+        "FirstName": "Finn",
+        "LastName": "Steiner",
+        "Phone Number": "+41 22 444 55 66",
+        "Canton": "GE",
+        "Address": "Rue du Rhône 1, 1204 Genève",
+        "EmployeeID": "0010",
+        "Job": "Engineer"
+    },
+    {
+        "FirstName": "Zoe",
+        "LastName": "Schneider",
+        "Telephone": "+41 86 261 62 64",
+        "Canton": "BS",
+        "Address": "Bahnhofstrasse 30, 8976 Thun",
+        "EmployeeID": "0028",
+        "Job": "Designer"
+    },
+    {
+        "FirstName": "Mia",
+        "LastName": "Baumann",
+        "Telephone": "+41 79 599 79 35",
+        "Canton": "VD",
+        "Address": "Poststrasse 77, 4028 Neuchâtel",
+        "EmployeeID": "0029",
+        "Job": "Teacher"
+    },
+    {
+        "FirstName": "Nina",
+        "LastName": "Frei",
+        "Telephone": "+41 54 505 26 95",
+        "Canton": "TI",
+        "Address": "Bergstrasse 59, 6180 Luzern",
+        "EmployeeID": "0030",
+        "Job": "Engineer"
+    }
+]
