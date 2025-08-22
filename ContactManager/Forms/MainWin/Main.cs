@@ -14,6 +14,12 @@ namespace ContactManager.MainWin
         public Main()
         {
             InitializeComponent();
+
+            // allows enter on keyboard
+            this.AcceptButton = ShowContactButton;
+
+            gridViewContactList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gridViewContactList.ReadOnly = true;
         }
 
         // button reads input from searchtextbox compares to text file and returns findings inside ContactList group box
@@ -45,32 +51,30 @@ namespace ContactManager.MainWin
                     bool match = false;
 
                     // loops over properties in contact class
-                    foreach ( var p in typeof(Contact).GetProperties() )
+                    foreach (var p in typeof(Contact).GetProperties() )
                     {
                         // if val == null then it becames empty string and it is able to compare 
                         var val = p.GetValue(c)?.ToString() ?? "";
 
                         // only here it compares 
-                        if (val.Contains(searchInput))
+                        if (val.Contains(searchInput, StringComparison.OrdinalIgnoreCase))
                         {
-                            match = true;                             
+                            match = true;
                             break;
                         }
+                        continue;
                     }
 
                     if (match)
                     {
                         contactListToCompare.Add(c);
                     }
-
                     
                 }
                     gridViewContactList.AutoGenerateColumns = true;
                     gridViewContactList.DataSource = contactListToCompare;
 
                 }          
-
-
 
         }
     }
