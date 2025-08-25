@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ContactManager;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ContactManager.WelcomeWin
+namespace ContactManager
 {
     public partial class WelcomeWin : Form
     {
@@ -16,5 +17,38 @@ namespace ContactManager.WelcomeWin
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            lblError.Text = "";
+            var user = txtUser.Text.Trim();
+            var pass = txtPass.Text;
+
+            if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass))
+            {
+                lblError.Text = "Please enter your Login credentials!";
+                return;
+            }
+
+            if (AuthService.Validate(user, pass))
+            {
+                var main = new WelcomeWin();
+                main.Show();
+                this.Hide();
+            }
+
+            else
+            {
+                lblError.Text = "Login failed";
+                txtPass.SelectAll();
+                txtPass.Focus();
+            }
+        }
+
+        private void chkShow_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPass.UseSystemPasswordChar = !chkShow.Checked;
+        }
     }
 }
+

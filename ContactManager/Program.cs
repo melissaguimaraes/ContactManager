@@ -1,3 +1,5 @@
+using ContactManager;
+
 namespace ContactManager
 {
     internal static class Program
@@ -12,7 +14,7 @@ namespace ContactManager
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //StarWindow is welcomeWin.cs and not the folder itself 
-            Application.Run(new MainWin.Main());
+            Application.Run(new WelcomeWin());
         }
     }
 }
