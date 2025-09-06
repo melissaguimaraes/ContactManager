@@ -230,6 +230,7 @@
             button2.TabIndex = 21;
             button2.Text = "Cancel";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += BtnCancel_Click;
             // 
             // dateTimePicker1
             // 
