@@ -36,6 +36,7 @@
             searchLabel = new Label();
             contactListBox = new GroupBox();
             gridViewContactList = new DataGridView();
+            BtnAddNewContact = new Button();
             SearchBox.SuspendLayout();
             contactListBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridViewContactList).BeginInit();
@@ -122,15 +123,27 @@
             gridViewContactList.Size = new Size(1060, 438);
             gridViewContactList.TabIndex = 0;
             // 
+            // BtnAddNewContact
+            // 
+            BtnAddNewContact.Location = new Point(965, 639);
+            BtnAddNewContact.Name = "BtnAddNewContact";
+            BtnAddNewContact.Size = new Size(113, 23);
+            BtnAddNewContact.TabIndex = 2;
+            BtnAddNewContact.Text = "Add new contact";
+            BtnAddNewContact.UseVisualStyleBackColor = true;
+            BtnAddNewContact.Click += BtnAddNewContact_Click;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1105, 684);
+            Controls.Add(BtnAddNewContact);
             Controls.Add(contactListBox);
             Controls.Add(SearchBox);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Main";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Contact Manager";
             SearchBox.ResumeLayout(false);
             SearchBox.PerformLayout();
@@ -148,5 +161,6 @@
         private Button ShowContactButton;
         private GroupBox contactListBox;
         private DataGridView gridViewContactList;
+        private Button BtnAddNewContact;
     }
 }
