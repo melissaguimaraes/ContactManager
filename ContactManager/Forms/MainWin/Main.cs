@@ -31,16 +31,18 @@ namespace ContactManager.MainWin
             string jsonFile = File.ReadAllText("Data/contacts.json");
 
             // parses the objcts into list so that it can be rendered in the grid
-            List<Contact> contacts =  JsonSerializer.Deserialize<List<Contact>>(jsonFile);
+            List<Contact> contacts = JsonSerializer.Deserialize<List<Contact>>(jsonFile);
 
             // if no entry on text box: show all entries of text file
-            if (string.IsNullOrEmpty(searchInput) ) {
+            if (string.IsNullOrEmpty(searchInput))
+            {
 
                 // it reads the json and creates the columns  
                 gridViewContactList.AutoGenerateColumns = true;
                 gridViewContactList.DataSource = contacts;
 
-            } else
+            }
+            else
 
             // here we check if any given entry matches 
             {
@@ -51,7 +53,7 @@ namespace ContactManager.MainWin
                     bool match = false;
 
                     // loops over properties in contact class
-                    foreach (var p in typeof(Contact).GetProperties() )
+                    foreach (var p in typeof(Contact).GetProperties())
                     {
                         // if val == null then it becames empty string and it is able to compare 
                         var val = p.GetValue(c)?.ToString() ?? "";
@@ -69,13 +71,15 @@ namespace ContactManager.MainWin
                     {
                         contactListToCompare.Add(c);
                     }
-                    
-                }
-                    gridViewContactList.AutoGenerateColumns = true;
-                    gridViewContactList.DataSource = contactListToCompare;
 
-                }          
+                }
+                gridViewContactList.AutoGenerateColumns = true;
+                gridViewContactList.DataSource = contactListToCompare;
+
+            }
 
         }
+
+        
     }
 }

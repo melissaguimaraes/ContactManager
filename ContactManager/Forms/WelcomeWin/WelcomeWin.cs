@@ -1,4 +1,5 @@
 ﻿using ContactManager;
+using ContactManager.MainWin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace ContactManager
         public WelcomeWin()
         {
             InitializeComponent();
+
+            this.AcceptButton = btnLogin;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -32,7 +35,9 @@ namespace ContactManager
 
             if (AuthService.Validate(user, pass))
             {
-                var main = new WelcomeWin();
+                
+                // when userlogin valid it redirects to mainWin
+                Main main = new Main();
                 main.Show();
                 this.Hide();
             }

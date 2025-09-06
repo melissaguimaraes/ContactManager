@@ -45,7 +45,7 @@
             // 
             SearchByTextBox.Location = new Point(0, 0);
             SearchByTextBox.Name = "SearchByTextBox";
-            SearchByTextBox.Size = new Size(100, 27);
+            SearchByTextBox.Size = new Size(100, 23);
             SearchByTextBox.TabIndex = 0;
             // 
             // searchLbl
@@ -60,17 +60,20 @@
             SearchBox.Controls.Add(ShowContactButton);
             SearchBox.Controls.Add(SearcByTxtBox);
             SearchBox.Controls.Add(searchLabel);
-            SearchBox.Location = new Point(17, 20);
+            SearchBox.Location = new Point(15, 15);
+            SearchBox.Margin = new Padding(3, 2, 3, 2);
             SearchBox.Name = "SearchBox";
-            SearchBox.Size = new Size(1217, 157);
+            SearchBox.Padding = new Padding(3, 2, 3, 2);
+            SearchBox.Size = new Size(1065, 118);
             SearchBox.TabIndex = 0;
             SearchBox.TabStop = false;
             // 
             // ShowContactButton
             // 
-            ShowContactButton.Location = new Point(836, 76);
+            ShowContactButton.Location = new Point(732, 57);
+            ShowContactButton.Margin = new Padding(3, 2, 3, 2);
             ShowContactButton.Name = "ShowContactButton";
-            ShowContactButton.Size = new Size(139, 30);
+            ShowContactButton.Size = new Size(122, 22);
             ShowContactButton.TabIndex = 2;
             ShowContactButton.Text = "Show Contacts";
             ShowContactButton.UseVisualStyleBackColor = true;
@@ -78,17 +81,18 @@
             // 
             // SearcByTxtBox
             // 
-            SearcByTxtBox.Location = new Point(24, 78);
+            SearcByTxtBox.Location = new Point(21, 58);
+            SearcByTxtBox.Margin = new Padding(3, 2, 3, 2);
             SearcByTxtBox.Name = "SearcByTxtBox";
-            SearcByTxtBox.Size = new Size(721, 27);
+            SearcByTxtBox.Size = new Size(631, 23);
             SearcByTxtBox.TabIndex = 1;
             // 
             // searchLabel
             // 
             searchLabel.AutoSize = true;
-            searchLabel.Location = new Point(24, 50);
+            searchLabel.Location = new Point(21, 38);
             searchLabel.Name = "searchLabel";
-            searchLabel.Size = new Size(115, 25);
+            searchLabel.Size = new Size(92, 21);
             searchLabel.TabIndex = 0;
             searchLabel.Tag = "Search Contact";
             searchLabel.Text = "Search Contacts";
@@ -97,9 +101,11 @@
             // contactListBox
             // 
             contactListBox.Controls.Add(gridViewContactList);
-            contactListBox.Location = new Point(17, 200);
+            contactListBox.Location = new Point(15, 150);
+            contactListBox.Margin = new Padding(3, 2, 3, 2);
             contactListBox.Name = "contactListBox";
-            contactListBox.Size = new Size(1218, 610);
+            contactListBox.Padding = new Padding(3, 2, 3, 2);
+            contactListBox.Size = new Size(1066, 458);
             contactListBox.TabIndex = 1;
             contactListBox.TabStop = false;
             contactListBox.Text = "Contact List";
@@ -109,19 +115,21 @@
             gridViewContactList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             gridViewContactList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridViewContactList.Dock = DockStyle.Fill;
-            gridViewContactList.Location = new Point(3, 23);
+            gridViewContactList.Location = new Point(3, 18);
+            gridViewContactList.Margin = new Padding(3, 2, 3, 2);
             gridViewContactList.Name = "gridViewContactList";
             gridViewContactList.RowHeadersWidth = 51;
-            gridViewContactList.Size = new Size(1212, 584);
+            gridViewContactList.Size = new Size(1060, 438);
             gridViewContactList.TabIndex = 0;
             // 
             // Main
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1263, 912);
+            ClientSize = new Size(1105, 684);
             Controls.Add(contactListBox);
             Controls.Add(SearchBox);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Main";
             Text = "Contact Manager";
             SearchBox.ResumeLayout(false);

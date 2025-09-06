@@ -37,7 +37,7 @@
             SuspendLayout();
             // 
             // lblTitle
-            //
+            // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             lblTitle.Location = new Point(273, 29);
@@ -88,7 +88,6 @@
             chkShow.TabIndex = 5;
             chkShow.Text = "Show password";
             chkShow.UseVisualStyleBackColor = true;
-
             // 
             // btnLogin
             // 
@@ -103,11 +102,11 @@
             // lblError
             // 
             lblError.AutoSize = true;
+            lblError.ForeColor = Color.Red;
             lblError.Location = new Point(252, 378);
             lblError.Name = "lblError";
-            lblError.Size = new Size(38, 15);
+            lblError.Size = new Size(0, 15);
             lblError.TabIndex = 7;
-            lblError.Text = "label3";
             // 
             // WelcomeWin
             // 
@@ -138,5 +137,8 @@
         private CheckBox chkShow;
         private Button btnLogin;
         private Label lblError;
+
+
+
     }
 }
