@@ -80,6 +80,10 @@ namespace ContactManager.MainWin
 
         }
 
-        
+        private void BtnAddNewContact_Click(object sender, EventArgs e)
+        {
+            new NewContactWin.NewContactWin().ShowDialog();
+
+        }
     }
 }
