@@ -122,6 +122,7 @@
             Controls.Add(lblUserNameTitle);
             Controls.Add(lblTitle);
             Name = "WelcomeWin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
@@ -137,8 +138,5 @@
         private CheckBox chkShow;
         private Button btnLogin;
         private Label lblError;
-
-
-
     }
 }
