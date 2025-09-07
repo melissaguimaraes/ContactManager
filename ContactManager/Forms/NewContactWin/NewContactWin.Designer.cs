@@ -53,9 +53,9 @@
             LblDepartment = new Label();
             TxtAHV = new TextBox();
             LblAHV = new Label();
-            label13 = new Label();
+            LblCity = new Label();
             TxtAddress = new TextBox();
-            LblAddress = new Label();
+            LblStreet = new Label();
             LblNationality = new Label();
             LblPostalCode = new Label();
             TxtEmployeeNo = new TextBox();
@@ -304,14 +304,14 @@
             LblAHV.TabIndex = 31;
             LblAHV.Text = "AHV number";
             // 
-            // label13
+            // LblCity
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(49, 372);
-            label13.Name = "label13";
-            label13.Size = new Size(60, 15);
-            label13.TabIndex = 33;
-            label13.Text = "Residence";
+            LblCity.AutoSize = true;
+            LblCity.Location = new Point(49, 372);
+            LblCity.Name = "LblCity";
+            LblCity.Size = new Size(28, 15);
+            LblCity.TabIndex = 33;
+            LblCity.Text = "City";
             // 
             // TxtAddress
             // 
@@ -320,14 +320,14 @@
             TxtAddress.Size = new Size(238, 23);
             TxtAddress.TabIndex = 34;
             // 
-            // LblAddress
+            // LblStreet
             // 
-            LblAddress.AutoSize = true;
-            LblAddress.Location = new Point(49, 337);
-            LblAddress.Name = "LblAddress";
-            LblAddress.Size = new Size(49, 15);
-            LblAddress.TabIndex = 35;
-            LblAddress.Text = "Address";
+            LblStreet.AutoSize = true;
+            LblStreet.Location = new Point(49, 337);
+            LblStreet.Name = "LblStreet";
+            LblStreet.Size = new Size(37, 15);
+            LblStreet.TabIndex = 35;
+            LblStreet.Text = "Street";
             // 
             // LblNationality
             // 
@@ -637,8 +637,8 @@
             Controls.Add(LblPostalCode);
             Controls.Add(LblNationality);
             Controls.Add(TxtAddress);
-            Controls.Add(LblAddress);
-            Controls.Add(label13);
+            Controls.Add(LblStreet);
+            Controls.Add(LblCity);
             Controls.Add(TxtAHV);
             Controls.Add(LblAHV);
             Controls.Add(LblDepartment);
@@ -700,9 +700,9 @@
         private Label LblDepartment;
         private TextBox TxtAHV;
         private Label LblAHV;
-        private Label label13;
+        private Label LblCity;
         private TextBox TxtAddress;
-        private Label LblAddress;
+        private Label LblStreet;
         private Label LblNationality;
         private Label LblPostalCode;
         private TextBox TxtEmployeeNo;
