@@ -28,115 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            textBox2 = new TextBox();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
+            LblSalutation = new Label();
+            TxtFirstname = new TextBox();
+            LblFirstname = new Label();
+            LblDateOfBirth = new Label();
+            LblTitle = new Label();
             textBox5 = new TextBox();
-            label5 = new Label();
-            textBox7 = new TextBox();
-            label7 = new Label();
-            label8 = new Label();
-            textBox9 = new TextBox();
-            label9 = new Label();
-            label10 = new Label();
-            comboBox1 = new ComboBox();
-            button1 = new Button();
-            button2 = new Button();
-            dateTimePicker1 = new DateTimePicker();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
-            textBox1 = new TextBox();
-            label6 = new Label();
-            comboBox4 = new ComboBox();
-            label11 = new Label();
-            textBox4 = new TextBox();
-            label12 = new Label();
+            LblMailadress = new Label();
+            TxtLastname = new TextBox();
+            LblLastname = new Label();
+            LblGender = new Label();
+            TxtBusinessPhone = new TextBox();
+            LblMobilePhone = new Label();
+            LblStatus = new Label();
+            CmbSalutation = new ComboBox();
+            BtnSaveNewContact = new Button();
+            BtnCancelNewContact = new Button();
+            dateTimePickerDateOfBirth = new DateTimePicker();
+            CmbGender = new ComboBox();
+            CmbTitle = new ComboBox();
+            TxtMobilePhone = new TextBox();
+            LblBusinessPhone = new Label();
+            CmbStatus = new ComboBox();
+            LblDepartment = new Label();
+            TxtAHV = new TextBox();
+            LblAHV = new Label();
             label13 = new Label();
-            textBox8 = new TextBox();
-            label14 = new Label();
-            label15 = new Label();
-            label16 = new Label();
-            textBox12 = new TextBox();
-            label17 = new Label();
-            comboBox5 = new ComboBox();
-            comboBox6 = new ComboBox();
-            label18 = new Label();
-            label19 = new Label();
-            label20 = new Label();
-            label21 = new Label();
-            textBox15 = new TextBox();
-            label22 = new Label();
-            label23 = new Label();
-            numericUpDown1 = new NumericUpDown();
-            numericUpDown2 = new NumericUpDown();
-            dateTimePicker2 = new DateTimePicker();
-            textBox3 = new TextBox();
-            label24 = new Label();
-            textBox6 = new TextBox();
-            label25 = new Label();
-            label26 = new Label();
-            label27 = new Label();
-            label28 = new Label();
-            dateTimePicker6 = new DateTimePicker();
-            comboBox8 = new ComboBox();
-            label30 = new Label();
-            comboBox9 = new ComboBox();
-            textBox11 = new TextBox();
-            numericUpDown3 = new NumericUpDown();
-            numericUpDown4 = new NumericUpDown();
-            textBox10 = new TextBox();
-            numericUpDown5 = new NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown5).BeginInit();
+            TxtAddress = new TextBox();
+            LblAddress = new Label();
+            LblNationality = new Label();
+            LblPostalCode = new Label();
+            TxtEmployeeNo = new TextBox();
+            LblEmployeeNo = new Label();
+            CmbDepartment = new ComboBox();
+            CmbNationality = new ComboBox();
+            LblEntryDate = new Label();
+            LblPrivatePhone = new Label();
+            LblWorkload = new Label();
+            LblExitDate = new Label();
+            LblRole = new Label();
+            LblMgmtLevel = new Label();
+            NumPostalCode = new NumericUpDown();
+            dateTimePickerExitDate = new DateTimePicker();
+            TxtCompanyName = new TextBox();
+            LblCompanyName = new Label();
+            LblCustomerType = new Label();
+            LblBusinessAddress = new Label();
+            LblAppYears = new Label();
+            LblCurrentAppYear = new Label();
+            dateTimePickerEntryDate = new DateTimePicker();
+            CmbWorkload = new ComboBox();
+            LblCompanyContact = new Label();
+            CmbCompanyContact = new ComboBox();
+            TxtPrivatePhone = new TextBox();
+            NumCurrentAppYear = new NumericUpDown();
+            TxtBusinessAddress = new TextBox();
+            CmbCustomerType = new ComboBox();
+            TxtMailadress = new TextBox();
+            CmbMgmtLevel = new ComboBox();
+            CmbAppYears = new ComboBox();
+            CmbRole = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)NumPostalCode).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)NumCurrentAppYear).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // LblSalutation
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(52, 62);
-            label1.Name = "label1";
-            label1.Size = new Size(60, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Salutation";
+            LblSalutation.AutoSize = true;
+            LblSalutation.Location = new Point(52, 62);
+            LblSalutation.Name = "LblSalutation";
+            LblSalutation.Size = new Size(60, 15);
+            LblSalutation.TabIndex = 0;
+            LblSalutation.Text = "Salutation";
             // 
-            // textBox2
+            // TxtFirstname
             // 
-            textBox2.Location = new Point(118, 97);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(130, 23);
-            textBox2.TabIndex = 1;
+            TxtFirstname.Location = new Point(118, 97);
+            TxtFirstname.Name = "TxtFirstname";
+            TxtFirstname.Size = new Size(130, 23);
+            TxtFirstname.TabIndex = 1;
             // 
-            // label2
+            // LblFirstname
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(52, 105);
-            label2.Name = "label2";
-            label2.Size = new Size(59, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Firstname";
+            LblFirstname.AutoSize = true;
+            LblFirstname.Location = new Point(52, 105);
+            LblFirstname.Name = "LblFirstname";
+            LblFirstname.Size = new Size(59, 15);
+            LblFirstname.TabIndex = 2;
+            LblFirstname.Text = "Firstname";
             // 
-            // label3
+            // LblDateOfBirth
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(52, 142);
-            label3.Name = "label3";
-            label3.Size = new Size(73, 15);
-            label3.TabIndex = 4;
-            label3.Text = "Date of birth";
+            LblDateOfBirth.AutoSize = true;
+            LblDateOfBirth.Location = new Point(52, 142);
+            LblDateOfBirth.Name = "LblDateOfBirth";
+            LblDateOfBirth.Size = new Size(73, 15);
+            LblDateOfBirth.TabIndex = 4;
+            LblDateOfBirth.Text = "Date of birth";
             // 
-            // label4
+            // LblTitle
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(199, 62);
-            label4.Name = "label4";
-            label4.Size = new Size(30, 15);
-            label4.TabIndex = 6;
-            label4.Text = "Title";
+            LblTitle.AutoSize = true;
+            LblTitle.Location = new Point(228, 62);
+            LblTitle.Name = "LblTitle";
+            LblTitle.Size = new Size(30, 15);
+            LblTitle.TabIndex = 6;
+            LblTitle.Text = "Title";
             // 
             // textBox5
             // 
@@ -145,167 +142,167 @@
             textBox5.Size = new Size(238, 23);
             textBox5.TabIndex = 7;
             // 
-            // label5
+            // LblMailadress
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(372, 180);
-            label5.Name = "label5";
-            label5.Size = new Size(79, 15);
-            label5.TabIndex = 8;
-            label5.Text = "Email address";
+            LblMailadress.AutoSize = true;
+            LblMailadress.Location = new Point(372, 180);
+            LblMailadress.Name = "LblMailadress";
+            LblMailadress.Size = new Size(84, 15);
+            LblMailadress.TabIndex = 8;
+            LblMailadress.Text = "E-Mail address";
             // 
-            // textBox7
+            // TxtLastname
             // 
-            textBox7.Location = new Point(342, 97);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(166, 23);
-            textBox7.TabIndex = 11;
+            TxtLastname.Location = new Point(342, 97);
+            TxtLastname.Name = "TxtLastname";
+            TxtLastname.Size = new Size(211, 23);
+            TxtLastname.TabIndex = 11;
             // 
-            // label7
+            // LblLastname
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(271, 105);
-            label7.Name = "label7";
-            label7.Size = new Size(58, 15);
-            label7.TabIndex = 12;
-            label7.Text = "Lastname";
+            LblLastname.AutoSize = true;
+            LblLastname.Location = new Point(271, 105);
+            LblLastname.Name = "LblLastname";
+            LblLastname.Size = new Size(58, 15);
+            LblLastname.TabIndex = 12;
+            LblLastname.Text = "Lastname";
             // 
-            // label8
+            // LblGender
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(379, 142);
-            label8.Name = "label8";
-            label8.Size = new Size(45, 15);
-            label8.TabIndex = 14;
-            label8.Text = "Gender";
+            LblGender.AutoSize = true;
+            LblGender.Location = new Point(379, 142);
+            LblGender.Name = "LblGender";
+            LblGender.Size = new Size(45, 15);
+            LblGender.TabIndex = 14;
+            LblGender.Text = "Gender";
             // 
-            // textBox9
+            // TxtBusinessPhone
             // 
-            textBox9.Location = new Point(159, 215);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(197, 23);
-            textBox9.TabIndex = 15;
+            TxtBusinessPhone.Location = new Point(159, 215);
+            TxtBusinessPhone.Name = "TxtBusinessPhone";
+            TxtBusinessPhone.Size = new Size(197, 23);
+            TxtBusinessPhone.TabIndex = 15;
             // 
-            // label9
+            // LblMobilePhone
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(52, 180);
-            label9.Name = "label9";
-            label9.Size = new Size(81, 15);
-            label9.TabIndex = 16;
-            label9.Text = "Mobile phone";
+            LblMobilePhone.AutoSize = true;
+            LblMobilePhone.Location = new Point(52, 180);
+            LblMobilePhone.Name = "LblMobilePhone";
+            LblMobilePhone.Size = new Size(81, 15);
+            LblMobilePhone.TabIndex = 16;
+            LblMobilePhone.Text = "Mobile phone";
             // 
-            // label10
+            // LblStatus
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(334, 62);
-            label10.Name = "label10";
-            label10.Size = new Size(39, 15);
-            label10.TabIndex = 18;
-            label10.Text = "Status";
+            LblStatus.AutoSize = true;
+            LblStatus.Location = new Point(357, 62);
+            LblStatus.Name = "LblStatus";
+            LblStatus.Size = new Size(39, 15);
+            LblStatus.TabIndex = 18;
+            LblStatus.Text = "Status";
             // 
-            // comboBox1
+            // CmbSalutation
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Mr", "Mrs" });
-            comboBox1.Location = new Point(118, 59);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(62, 23);
-            comboBox1.TabIndex = 19;
+            CmbSalutation.FormattingEnabled = true;
+            CmbSalutation.Items.AddRange(new object[] { "Ms", "Mrs", "Mr", "Mx" });
+            CmbSalutation.Location = new Point(118, 59);
+            CmbSalutation.Name = "CmbSalutation";
+            CmbSalutation.Size = new Size(62, 23);
+            CmbSalutation.TabIndex = 19;
             // 
-            // button1
+            // BtnSaveNewContact
             // 
-            button1.Location = new Point(466, 690);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 20;
-            button1.Text = "Save";
-            button1.UseVisualStyleBackColor = true;
+            BtnSaveNewContact.Location = new Point(466, 690);
+            BtnSaveNewContact.Name = "BtnSaveNewContact";
+            BtnSaveNewContact.Size = new Size(75, 23);
+            BtnSaveNewContact.TabIndex = 20;
+            BtnSaveNewContact.Text = "Save";
+            BtnSaveNewContact.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // BtnCancelNewContact
             // 
-            button2.Location = new Point(566, 690);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 21;
-            button2.Text = "Cancel";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += BtnCancel_Click;
+            BtnCancelNewContact.Location = new Point(566, 690);
+            BtnCancelNewContact.Name = "BtnCancelNewContact";
+            BtnCancelNewContact.Size = new Size(75, 23);
+            BtnCancelNewContact.TabIndex = 21;
+            BtnCancelNewContact.Text = "Cancel";
+            BtnCancelNewContact.UseVisualStyleBackColor = true;
+            BtnCancelNewContact.Click += BtnCancel_Click;
             // 
-            // dateTimePicker1
+            // dateTimePickerDateOfBirth
             // 
-            dateTimePicker1.Location = new Point(160, 139);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(197, 23);
-            dateTimePicker1.TabIndex = 22;
+            dateTimePickerDateOfBirth.Location = new Point(160, 139);
+            dateTimePickerDateOfBirth.Name = "dateTimePickerDateOfBirth";
+            dateTimePickerDateOfBirth.Size = new Size(197, 23);
+            dateTimePickerDateOfBirth.TabIndex = 22;
             // 
-            // comboBox2
+            // CmbGender
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Female", "Male" });
-            comboBox2.Location = new Point(430, 137);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(78, 23);
-            comboBox2.TabIndex = 23;
+            CmbGender.FormattingEnabled = true;
+            CmbGender.Items.AddRange(new object[] { "Female", "Male", "Other" });
+            CmbGender.Location = new Point(430, 137);
+            CmbGender.Name = "CmbGender";
+            CmbGender.Size = new Size(78, 23);
+            CmbGender.TabIndex = 23;
             // 
-            // comboBox3
+            // CmbTitle
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "Dr." });
-            comboBox3.Location = new Point(235, 59);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(65, 23);
-            comboBox3.TabIndex = 24;
+            CmbTitle.FormattingEnabled = true;
+            CmbTitle.Items.AddRange(new object[] { "Dr.", "Prof." });
+            CmbTitle.Location = new Point(264, 59);
+            CmbTitle.Name = "CmbTitle";
+            CmbTitle.Size = new Size(65, 23);
+            CmbTitle.TabIndex = 24;
             // 
-            // textBox1
+            // TxtMobilePhone
             // 
-            textBox1.Location = new Point(159, 177);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(198, 23);
-            textBox1.TabIndex = 25;
+            TxtMobilePhone.Location = new Point(159, 177);
+            TxtMobilePhone.Name = "TxtMobilePhone";
+            TxtMobilePhone.Size = new Size(198, 23);
+            TxtMobilePhone.TabIndex = 25;
             // 
-            // label6
+            // LblBusinessPhone
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(52, 218);
-            label6.Name = "label6";
-            label6.Size = new Size(89, 15);
-            label6.TabIndex = 26;
-            label6.Text = "Business phone";
+            LblBusinessPhone.AutoSize = true;
+            LblBusinessPhone.Location = new Point(52, 218);
+            LblBusinessPhone.Name = "LblBusinessPhone";
+            LblBusinessPhone.Size = new Size(89, 15);
+            LblBusinessPhone.TabIndex = 26;
+            LblBusinessPhone.Text = "Business phone";
             // 
-            // comboBox4
+            // CmbStatus
             // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Items.AddRange(new object[] { "active", "passive" });
-            comboBox4.Location = new Point(379, 62);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(72, 23);
-            comboBox4.TabIndex = 27;
+            CmbStatus.FormattingEnabled = true;
+            CmbStatus.Items.AddRange(new object[] { "active", "passive" });
+            CmbStatus.Location = new Point(402, 59);
+            CmbStatus.Name = "CmbStatus";
+            CmbStatus.Size = new Size(72, 23);
+            CmbStatus.TabIndex = 27;
             // 
-            // label11
+            // LblDepartment
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(50, 495);
-            label11.Name = "label11";
-            label11.Size = new Size(70, 15);
-            label11.TabIndex = 29;
-            label11.Text = "Department";
+            LblDepartment.AutoSize = true;
+            LblDepartment.Location = new Point(50, 495);
+            LblDepartment.Name = "LblDepartment";
+            LblDepartment.Size = new Size(70, 15);
+            LblDepartment.TabIndex = 29;
+            LblDepartment.Text = "Department";
             // 
-            // textBox4
+            // TxtAHV
             // 
-            textBox4.Location = new Point(457, 215);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(178, 23);
-            textBox4.TabIndex = 30;
+            TxtAHV.Location = new Point(457, 215);
+            TxtAHV.Name = "TxtAHV";
+            TxtAHV.Size = new Size(178, 23);
+            TxtAHV.TabIndex = 30;
             // 
-            // label12
+            // LblAHV
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(372, 218);
-            label12.Name = "label12";
-            label12.Size = new Size(76, 15);
-            label12.TabIndex = 31;
-            label12.Text = "AHV number";
+            LblAHV.AutoSize = true;
+            LblAHV.Location = new Point(372, 218);
+            LblAHV.Name = "LblAHV";
+            LblAHV.Size = new Size(76, 15);
+            LblAHV.TabIndex = 31;
+            LblAHV.Text = "AHV number";
             // 
             // label13
             // 
@@ -316,422 +313,427 @@
             label13.TabIndex = 33;
             label13.Text = "Residence";
             // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(118, 334);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(238, 23);
-            textBox8.TabIndex = 34;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(49, 337);
-            label14.Name = "label14";
-            label14.Size = new Size(49, 15);
-            label14.TabIndex = 35;
-            label14.Text = "Address";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(372, 252);
-            label15.Name = "label15";
-            label15.Size = new Size(65, 15);
-            label15.TabIndex = 37;
-            label15.Text = "Nationality";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Location = new Point(372, 337);
-            label16.Name = "label16";
-            label16.Size = new Size(70, 15);
-            label16.TabIndex = 39;
-            label16.Text = "Postal Code";
-            // 
-            // textBox12
-            // 
-            textBox12.Location = new Point(160, 21);
-            textBox12.Name = "textBox12";
-            textBox12.ReadOnly = true;
-            textBox12.Size = new Size(140, 23);
-            textBox12.TabIndex = 40;
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(52, 24);
-            label17.Name = "label17";
-            label17.Size = new Size(104, 15);
-            label17.TabIndex = 41;
-            label17.Text = "Employee number";
-            // 
-            // comboBox5
-            // 
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Items.AddRange(new object[] { "Engineering", "IT" });
-            comboBox5.Location = new Point(159, 492);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(170, 23);
-            comboBox5.TabIndex = 42;
-            // 
-            // comboBox6
-            // 
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Items.AddRange(new object[] { "Swiss" });
-            comboBox6.Location = new Point(457, 252);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(178, 23);
-            comboBox6.TabIndex = 43;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(327, 613);
-            label18.Name = "label18";
-            label18.Size = new Size(61, 15);
-            label18.TabIndex = 47;
-            label18.Text = "Entry Date";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Location = new Point(49, 255);
-            label19.Name = "label19";
-            label19.Size = new Size(80, 15);
-            label19.TabIndex = 45;
-            label19.Text = "Private Phone";
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new Point(524, 495);
-            label20.Name = "label20";
-            label20.Size = new Size(58, 15);
-            label20.TabIndex = 51;
-            label20.Text = "Workload";
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Location = new Point(327, 579);
-            label21.Name = "label21";
-            label21.Size = new Size(52, 15);
-            label21.TabIndex = 49;
-            label21.Text = "Exit Date";
-            // 
-            // textBox15
-            // 
-            textBox15.Location = new Point(379, 492);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(139, 23);
-            textBox15.TabIndex = 54;
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Location = new Point(343, 495);
-            label22.Name = "label22";
-            label22.Size = new Size(30, 15);
-            label22.TabIndex = 55;
-            label22.Text = "Role";
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(316, 532);
-            label23.Name = "label23";
-            label23.Size = new Size(108, 15);
-            label23.TabIndex = 53;
-            label23.Text = "Management Level";
-            // 
-            // numericUpDown1
-            // 
-            numericUpDown1.Location = new Point(457, 335);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(96, 23);
-            numericUpDown1.TabIndex = 57;
-            // 
-            // numericUpDown2
-            // 
-            numericUpDown2.Location = new Point(457, 177);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(178, 23);
-            numericUpDown2.TabIndex = 58;
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Location = new Point(402, 613);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(239, 23);
-            dateTimePicker2.TabIndex = 59;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(159, 453);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(140, 23);
-            textBox3.TabIndex = 67;
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Location = new Point(49, 453);
-            label24.Name = "label24";
-            label24.Size = new Size(94, 15);
-            label24.TabIndex = 68;
-            label24.Text = "Company Name";
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(571, 59);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(35, 23);
-            textBox6.TabIndex = 65;
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Location = new Point(478, 62);
-            label25.Name = "label25";
-            label25.Size = new Size(87, 15);
-            label25.TabIndex = 66;
-            label25.Text = "Customer Type";
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Location = new Point(327, 453);
-            label26.Name = "label26";
-            label26.Size = new Size(97, 15);
-            label26.TabIndex = 64;
-            label26.Text = "Business Address";
-            // 
-            // label27
-            // 
-            label27.AutoSize = true;
-            label27.Location = new Point(52, 611);
-            label27.Name = "label27";
-            label27.Size = new Size(112, 15);
-            label27.TabIndex = 62;
-            label27.Text = "Apprenticeship Year";
-            // 
-            // label28
-            // 
-            label28.AutoSize = true;
-            label28.Location = new Point(50, 579);
-            label28.Name = "label28";
-            label28.Size = new Size(155, 15);
-            label28.TabIndex = 61;
-            label28.Text = "Current Apprenticeship Year";
-            // 
-            // dateTimePicker6
-            // 
-            dateTimePicker6.Location = new Point(402, 577);
-            dateTimePicker6.Name = "dateTimePicker6";
-            dateTimePicker6.Size = new Size(239, 23);
-            dateTimePicker6.TabIndex = 71;
-            // 
-            // comboBox8
-            // 
-            comboBox8.FormattingEnabled = true;
-            comboBox8.Items.AddRange(new object[] { "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%" });
-            comboBox8.Location = new Point(588, 492);
-            comboBox8.Name = "comboBox8";
-            comboBox8.Size = new Size(53, 23);
-            comboBox8.TabIndex = 72;
-            // 
-            // label30
-            // 
-            label30.AutoSize = true;
-            label30.Location = new Point(50, 532);
-            label30.Name = "label30";
-            label30.Size = new Size(104, 15);
-            label30.TabIndex = 73;
-            label30.Text = "Company Contact";
-            // 
-            // comboBox9
-            // 
-            comboBox9.FormattingEnabled = true;
-            comboBox9.Location = new Point(161, 532);
-            comboBox9.Name = "comboBox9";
-            comboBox9.Size = new Size(140, 23);
-            comboBox9.TabIndex = 77;
-            // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(160, 252);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(197, 23);
-            textBox11.TabIndex = 79;
-            // 
-            // numericUpDown3
-            // 
-            numericUpDown3.Location = new Point(211, 611);
-            numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(75, 23);
-            numericUpDown3.TabIndex = 81;
-            // 
-            // numericUpDown4
-            // 
-            numericUpDown4.Location = new Point(211, 577);
-            numericUpDown4.Name = "numericUpDown4";
-            numericUpDown4.Size = new Size(75, 23);
-            numericUpDown4.TabIndex = 82;
-            // 
-            // textBox10
-            // 
-            textBox10.Location = new Point(430, 453);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(205, 23);
-            textBox10.TabIndex = 83;
-            // 
-            // numericUpDown5
-            // 
-            numericUpDown5.Location = new Point(433, 530);
-            numericUpDown5.Name = "numericUpDown5";
-            numericUpDown5.Size = new Size(75, 23);
-            numericUpDown5.TabIndex = 84;
+            // TxtAddress
+            // 
+            TxtAddress.Location = new Point(118, 334);
+            TxtAddress.Name = "TxtAddress";
+            TxtAddress.Size = new Size(238, 23);
+            TxtAddress.TabIndex = 34;
+            // 
+            // LblAddress
+            // 
+            LblAddress.AutoSize = true;
+            LblAddress.Location = new Point(49, 337);
+            LblAddress.Name = "LblAddress";
+            LblAddress.Size = new Size(49, 15);
+            LblAddress.TabIndex = 35;
+            LblAddress.Text = "Address";
+            // 
+            // LblNationality
+            // 
+            LblNationality.AutoSize = true;
+            LblNationality.Location = new Point(372, 252);
+            LblNationality.Name = "LblNationality";
+            LblNationality.Size = new Size(65, 15);
+            LblNationality.TabIndex = 37;
+            LblNationality.Text = "Nationality";
+            // 
+            // LblPostalCode
+            // 
+            LblPostalCode.AutoSize = true;
+            LblPostalCode.Location = new Point(372, 337);
+            LblPostalCode.Name = "LblPostalCode";
+            LblPostalCode.Size = new Size(70, 15);
+            LblPostalCode.TabIndex = 39;
+            LblPostalCode.Text = "Postal Code";
+            // 
+            // TxtEmployeeNo
+            // 
+            TxtEmployeeNo.Location = new Point(160, 21);
+            TxtEmployeeNo.Name = "TxtEmployeeNo";
+            TxtEmployeeNo.ReadOnly = true;
+            TxtEmployeeNo.Size = new Size(140, 23);
+            TxtEmployeeNo.TabIndex = 40;
+            // 
+            // LblEmployeeNo
+            // 
+            LblEmployeeNo.AutoSize = true;
+            LblEmployeeNo.Location = new Point(52, 24);
+            LblEmployeeNo.Name = "LblEmployeeNo";
+            LblEmployeeNo.Size = new Size(104, 15);
+            LblEmployeeNo.TabIndex = 41;
+            LblEmployeeNo.Text = "Employee number";
+            // 
+            // CmbDepartment
+            // 
+            CmbDepartment.FormattingEnabled = true;
+            CmbDepartment.Items.AddRange(new object[] { "IT", "Engineering", "Apprentice", "Human Resources (HR)", "Finance", "Accounting", "Sales", "Marketing", "Customer Service", "Research and Development (R&D)", "Operations", "Logistics", "Procurement / Purchasing", "Legal & Compliance", "Production", "Administration", "Public Relations (PR)", "Business Development", "Training & Development" });
+            CmbDepartment.Location = new Point(159, 492);
+            CmbDepartment.Name = "CmbDepartment";
+            CmbDepartment.Size = new Size(170, 23);
+            CmbDepartment.TabIndex = 42;
+            // 
+            // CmbNationality
+            // 
+            CmbNationality.FormattingEnabled = true;
+            CmbNationality.Items.AddRange(new object[] { "Albanian", "", "", "American", "", "", "Austrian", "", "", "Bosnian", "", "", "British", "", "", "Chinese", "", "", "Croatian", "", "", "Czech", "", "", "Dutch", "", "", "Filipino", "", "", "French", "", "", "German", "", "", "Greek", "", "", "Hungarian", "", "", "Iranian", "", "", "Italian", "", "", "Kosovar", "", "", "Polish", "", "", "Portuguese", "", "", "Romanian", "", "", "Russian", "", "", "Serbian", "", "", "Spanish", "", "", "Sri Lankan", "", "", "Swiss", "Thai", "", "", "Turkish", "" });
+            CmbNationality.Location = new Point(457, 252);
+            CmbNationality.Name = "CmbNationality";
+            CmbNationality.Size = new Size(178, 23);
+            CmbNationality.TabIndex = 43;
+            // 
+            // LblEntryDate
+            // 
+            LblEntryDate.AutoSize = true;
+            LblEntryDate.Location = new Point(327, 579);
+            LblEntryDate.Name = "LblEntryDate";
+            LblEntryDate.Size = new Size(61, 15);
+            LblEntryDate.TabIndex = 47;
+            LblEntryDate.Text = "Entry Date";
+            // 
+            // LblPrivatePhone
+            // 
+            LblPrivatePhone.AutoSize = true;
+            LblPrivatePhone.Location = new Point(52, 255);
+            LblPrivatePhone.Name = "LblPrivatePhone";
+            LblPrivatePhone.Size = new Size(80, 15);
+            LblPrivatePhone.TabIndex = 45;
+            LblPrivatePhone.Text = "Private Phone";
+            // 
+            // LblWorkload
+            // 
+            LblWorkload.AutoSize = true;
+            LblWorkload.Location = new Point(524, 495);
+            LblWorkload.Name = "LblWorkload";
+            LblWorkload.Size = new Size(58, 15);
+            LblWorkload.TabIndex = 51;
+            LblWorkload.Text = "Workload";
+            // 
+            // LblExitDate
+            // 
+            LblExitDate.AutoSize = true;
+            LblExitDate.Location = new Point(327, 611);
+            LblExitDate.Name = "LblExitDate";
+            LblExitDate.Size = new Size(52, 15);
+            LblExitDate.TabIndex = 49;
+            LblExitDate.Text = "Exit Date";
+            // 
+            // LblRole
+            // 
+            LblRole.AutoSize = true;
+            LblRole.Location = new Point(343, 495);
+            LblRole.Name = "LblRole";
+            LblRole.Size = new Size(30, 15);
+            LblRole.TabIndex = 55;
+            LblRole.Text = "Role";
+            // 
+            // LblMgmtLevel
+            // 
+            LblMgmtLevel.AutoSize = true;
+            LblMgmtLevel.Location = new Point(316, 532);
+            LblMgmtLevel.Name = "LblMgmtLevel";
+            LblMgmtLevel.Size = new Size(108, 15);
+            LblMgmtLevel.TabIndex = 53;
+            LblMgmtLevel.Text = "Management Level";
+            // 
+            // NumPostalCode
+            // 
+            NumPostalCode.Location = new Point(457, 335);
+            NumPostalCode.Name = "NumPostalCode";
+            NumPostalCode.Size = new Size(96, 23);
+            NumPostalCode.TabIndex = 57;
+            // 
+            // dateTimePickerExitDate
+            // 
+            dateTimePickerExitDate.Location = new Point(402, 613);
+            dateTimePickerExitDate.Name = "dateTimePickerExitDate";
+            dateTimePickerExitDate.Size = new Size(239, 23);
+            dateTimePickerExitDate.TabIndex = 59;
+            // 
+            // TxtCompanyName
+            // 
+            TxtCompanyName.Location = new Point(159, 453);
+            TxtCompanyName.Name = "TxtCompanyName";
+            TxtCompanyName.Size = new Size(140, 23);
+            TxtCompanyName.TabIndex = 67;
+            // 
+            // LblCompanyName
+            // 
+            LblCompanyName.AutoSize = true;
+            LblCompanyName.Location = new Point(49, 453);
+            LblCompanyName.Name = "LblCompanyName";
+            LblCompanyName.Size = new Size(94, 15);
+            LblCompanyName.TabIndex = 68;
+            LblCompanyName.Text = "Company Name";
+            // 
+            // LblCustomerType
+            // 
+            LblCustomerType.AutoSize = true;
+            LblCustomerType.Location = new Point(507, 62);
+            LblCustomerType.Name = "LblCustomerType";
+            LblCustomerType.Size = new Size(87, 15);
+            LblCustomerType.TabIndex = 66;
+            LblCustomerType.Text = "Customer Type";
+            // 
+            // LblBusinessAddress
+            // 
+            LblBusinessAddress.AutoSize = true;
+            LblBusinessAddress.Location = new Point(327, 453);
+            LblBusinessAddress.Name = "LblBusinessAddress";
+            LblBusinessAddress.Size = new Size(97, 15);
+            LblBusinessAddress.TabIndex = 64;
+            LblBusinessAddress.Text = "Business Address";
+            // 
+            // LblAppYears
+            // 
+            LblAppYears.AutoSize = true;
+            LblAppYears.Location = new Point(52, 611);
+            LblAppYears.Name = "LblAppYears";
+            LblAppYears.Size = new Size(117, 15);
+            LblAppYears.TabIndex = 62;
+            LblAppYears.Text = "Apprenticeship Years";
+            // 
+            // LblCurrentAppYear
+            // 
+            LblCurrentAppYear.AutoSize = true;
+            LblCurrentAppYear.Location = new Point(50, 579);
+            LblCurrentAppYear.Name = "LblCurrentAppYear";
+            LblCurrentAppYear.Size = new Size(155, 15);
+            LblCurrentAppYear.TabIndex = 61;
+            LblCurrentAppYear.Text = "Current Apprenticeship Year";
+            // 
+            // dateTimePickerEntryDate
+            // 
+            dateTimePickerEntryDate.Location = new Point(402, 577);
+            dateTimePickerEntryDate.Name = "dateTimePickerEntryDate";
+            dateTimePickerEntryDate.Size = new Size(239, 23);
+            dateTimePickerEntryDate.TabIndex = 71;
+            // 
+            // CmbWorkload
+            // 
+            CmbWorkload.FormattingEnabled = true;
+            CmbWorkload.Items.AddRange(new object[] { "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%" });
+            CmbWorkload.Location = new Point(588, 492);
+            CmbWorkload.Name = "CmbWorkload";
+            CmbWorkload.Size = new Size(53, 23);
+            CmbWorkload.TabIndex = 72;
+            // 
+            // LblCompanyContact
+            // 
+            LblCompanyContact.AutoSize = true;
+            LblCompanyContact.Location = new Point(50, 532);
+            LblCompanyContact.Name = "LblCompanyContact";
+            LblCompanyContact.Size = new Size(104, 15);
+            LblCompanyContact.TabIndex = 73;
+            LblCompanyContact.Text = "Company Contact";
+            // 
+            // CmbCompanyContact
+            // 
+            CmbCompanyContact.FormattingEnabled = true;
+            CmbCompanyContact.Location = new Point(161, 532);
+            CmbCompanyContact.Name = "CmbCompanyContact";
+            CmbCompanyContact.Size = new Size(140, 23);
+            CmbCompanyContact.TabIndex = 77;
+            // 
+            // TxtPrivatePhone
+            // 
+            TxtPrivatePhone.Location = new Point(160, 252);
+            TxtPrivatePhone.Name = "TxtPrivatePhone";
+            TxtPrivatePhone.Size = new Size(197, 23);
+            TxtPrivatePhone.TabIndex = 79;
+            // 
+            // NumCurrentAppYear
+            // 
+            NumCurrentAppYear.Location = new Point(211, 577);
+            NumCurrentAppYear.Name = "NumCurrentAppYear";
+            NumCurrentAppYear.Size = new Size(75, 23);
+            NumCurrentAppYear.TabIndex = 82;
+            // 
+            // TxtBusinessAddress
+            // 
+            TxtBusinessAddress.Location = new Point(430, 453);
+            TxtBusinessAddress.Name = "TxtBusinessAddress";
+            TxtBusinessAddress.Size = new Size(205, 23);
+            TxtBusinessAddress.TabIndex = 83;
+            // 
+            // CmbCustomerType
+            // 
+            CmbCustomerType.FormattingEnabled = true;
+            CmbCustomerType.Items.AddRange(new object[] { "A", "B", "C", "D", "E" });
+            CmbCustomerType.Location = new Point(600, 62);
+            CmbCustomerType.Name = "CmbCustomerType";
+            CmbCustomerType.Size = new Size(35, 23);
+            CmbCustomerType.TabIndex = 85;
+            // 
+            // TxtMailadress
+            // 
+            TxtMailadress.Location = new Point(457, 177);
+            TxtMailadress.Name = "TxtMailadress";
+            TxtMailadress.Size = new Size(178, 23);
+            TxtMailadress.TabIndex = 86;
+            // 
+            // CmbMgmtLevel
+            // 
+            CmbMgmtLevel.FormattingEnabled = true;
+            CmbMgmtLevel.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5" });
+            CmbMgmtLevel.Location = new Point(430, 532);
+            CmbMgmtLevel.Name = "CmbMgmtLevel";
+            CmbMgmtLevel.Size = new Size(75, 23);
+            CmbMgmtLevel.TabIndex = 87;
+            // 
+            // CmbAppYears
+            // 
+            CmbAppYears.FormattingEnabled = true;
+            CmbAppYears.Items.AddRange(new object[] { "1", "2", "3", "4" });
+            CmbAppYears.Location = new Point(211, 613);
+            CmbAppYears.Name = "CmbAppYears";
+            CmbAppYears.Size = new Size(75, 23);
+            CmbAppYears.TabIndex = 88;
+            // 
+            // CmbRole
+            // 
+            CmbRole.FormattingEnabled = true;
+            CmbRole.Items.AddRange(new object[] { "Apprentice", "Intern", "Assistant", "Specialist", "Junior Manager", "Manager", "Consultant", "Project Manager", "Senior Manager", "Department Manager", "Team Lead", "Director", "Chief Officer" });
+            CmbRole.Location = new Point(379, 492);
+            CmbRole.Name = "CmbRole";
+            CmbRole.Size = new Size(139, 23);
+            CmbRole.TabIndex = 89;
             // 
             // NewContactWin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(704, 747);
-            Controls.Add(numericUpDown5);
-            Controls.Add(textBox10);
-            Controls.Add(numericUpDown4);
-            Controls.Add(numericUpDown3);
-            Controls.Add(textBox11);
-            Controls.Add(comboBox9);
-            Controls.Add(label30);
-            Controls.Add(comboBox8);
-            Controls.Add(dateTimePicker6);
-            Controls.Add(textBox3);
-            Controls.Add(label24);
-            Controls.Add(textBox6);
-            Controls.Add(label25);
-            Controls.Add(label26);
-            Controls.Add(label27);
-            Controls.Add(label28);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(numericUpDown2);
-            Controls.Add(numericUpDown1);
-            Controls.Add(textBox15);
-            Controls.Add(label22);
-            Controls.Add(label23);
-            Controls.Add(label20);
-            Controls.Add(label21);
-            Controls.Add(label18);
-            Controls.Add(label19);
-            Controls.Add(comboBox6);
-            Controls.Add(comboBox5);
-            Controls.Add(textBox12);
-            Controls.Add(label17);
-            Controls.Add(label16);
-            Controls.Add(label15);
-            Controls.Add(textBox8);
-            Controls.Add(label14);
+            Controls.Add(CmbRole);
+            Controls.Add(CmbAppYears);
+            Controls.Add(CmbMgmtLevel);
+            Controls.Add(TxtMailadress);
+            Controls.Add(CmbCustomerType);
+            Controls.Add(TxtBusinessAddress);
+            Controls.Add(NumCurrentAppYear);
+            Controls.Add(TxtPrivatePhone);
+            Controls.Add(CmbCompanyContact);
+            Controls.Add(LblCompanyContact);
+            Controls.Add(CmbWorkload);
+            Controls.Add(dateTimePickerEntryDate);
+            Controls.Add(TxtCompanyName);
+            Controls.Add(LblCompanyName);
+            Controls.Add(LblCustomerType);
+            Controls.Add(LblBusinessAddress);
+            Controls.Add(LblAppYears);
+            Controls.Add(LblCurrentAppYear);
+            Controls.Add(dateTimePickerExitDate);
+            Controls.Add(NumPostalCode);
+            Controls.Add(LblRole);
+            Controls.Add(LblMgmtLevel);
+            Controls.Add(LblWorkload);
+            Controls.Add(LblExitDate);
+            Controls.Add(LblEntryDate);
+            Controls.Add(LblPrivatePhone);
+            Controls.Add(CmbNationality);
+            Controls.Add(CmbDepartment);
+            Controls.Add(TxtEmployeeNo);
+            Controls.Add(LblEmployeeNo);
+            Controls.Add(LblPostalCode);
+            Controls.Add(LblNationality);
+            Controls.Add(TxtAddress);
+            Controls.Add(LblAddress);
             Controls.Add(label13);
-            Controls.Add(textBox4);
-            Controls.Add(label12);
-            Controls.Add(label11);
-            Controls.Add(comboBox4);
-            Controls.Add(textBox1);
-            Controls.Add(label6);
-            Controls.Add(comboBox3);
-            Controls.Add(comboBox2);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(comboBox1);
-            Controls.Add(label10);
-            Controls.Add(textBox9);
-            Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(textBox7);
-            Controls.Add(label7);
+            Controls.Add(TxtAHV);
+            Controls.Add(LblAHV);
+            Controls.Add(LblDepartment);
+            Controls.Add(CmbStatus);
+            Controls.Add(TxtMobilePhone);
+            Controls.Add(LblBusinessPhone);
+            Controls.Add(CmbTitle);
+            Controls.Add(CmbGender);
+            Controls.Add(dateTimePickerDateOfBirth);
+            Controls.Add(BtnCancelNewContact);
+            Controls.Add(BtnSaveNewContact);
+            Controls.Add(CmbSalutation);
+            Controls.Add(LblStatus);
+            Controls.Add(TxtBusinessPhone);
+            Controls.Add(LblMobilePhone);
+            Controls.Add(LblGender);
+            Controls.Add(TxtLastname);
+            Controls.Add(LblLastname);
             Controls.Add(textBox5);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(textBox2);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(LblMailadress);
+            Controls.Add(LblTitle);
+            Controls.Add(LblDateOfBirth);
+            Controls.Add(TxtFirstname);
+            Controls.Add(LblFirstname);
+            Controls.Add(LblSalutation);
             Name = "NewContactWin";
             StartPosition = FormStartPosition.CenterParent;
             Text = "New contact";
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)NumPostalCode).EndInit();
+            ((System.ComponentModel.ISupportInitialize)NumCurrentAppYear).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private TextBox textBox2;
-        private Label label2;
-        private Label label3;
-        private Label label4;
+        private Label LblSalutation;
+        private TextBox TxtFirstname;
+        private Label LblFirstname;
+        private Label LblDateOfBirth;
+        private Label LblTitle;
         private TextBox textBox5;
-        private Label label5;
-        private TextBox textBox7;
-        private Label label7;
-        private Label label8;
-        private TextBox textBox9;
-        private Label label9;
-        private Label label10;
-        private ComboBox comboBox1;
-        private Button button1;
-        private Button button2;
-        private DateTimePicker dateTimePicker1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox3;
-        private TextBox textBox1;
-        private Label label6;
-        private ComboBox comboBox4;
-        private Label label11;
-        private TextBox textBox4;
-        private Label label12;
+        private Label LblMailadress;
+        private TextBox TxtLastname;
+        private Label LblLastname;
+        private Label LblGender;
+        private TextBox TxtBusinessPhone;
+        private Label LblMobilePhone;
+        private Label LblStatus;
+        private ComboBox CmbSalutation;
+        private Button BtnSaveNewContact;
+        private Button BtnCancelNewContact;
+        private DateTimePicker dateTimePickerDateOfBirth;
+        private ComboBox CmbGender;
+        private ComboBox CmbTitle;
+        private TextBox TxtMobilePhone;
+        private Label LblBusinessPhone;
+        private ComboBox CmbStatus;
+        private Label LblDepartment;
+        private TextBox TxtAHV;
+        private Label LblAHV;
         private Label label13;
-        private TextBox textBox8;
-        private Label label14;
-        private Label label15;
-        private Label label16;
-        private TextBox textBox12;
-        private Label label17;
-        private ComboBox comboBox5;
-        private ComboBox comboBox6;
-        private Label label18;
-        private Label label19;
-        private Label label20;
-        private Label label21;
-        private TextBox textBox15;
-        private Label label22;
-        private Label label23;
-        private NumericUpDown numericUpDown1;
-        private NumericUpDown numericUpDown2;
-        private DateTimePicker dateTimePicker2;
-        private TextBox textBox3;
-        private Label label24;
-        private TextBox textBox6;
-        private Label label25;
-        private Label label26;
-        private Label label27;
-        private Label label28;
-        private DateTimePicker dateTimePicker6;
-        private ComboBox comboBox8;
-        private Label label30;
-        private ComboBox comboBox9;
-        private TextBox textBox11;
-        private NumericUpDown numericUpDown3;
-        private NumericUpDown numericUpDown4;
-        private TextBox textBox10;
-        private NumericUpDown numericUpDown5;
+        private TextBox TxtAddress;
+        private Label LblAddress;
+        private Label LblNationality;
+        private Label LblPostalCode;
+        private TextBox TxtEmployeeNo;
+        private Label LblEmployeeNo;
+        private ComboBox CmbDepartment;
+        private ComboBox CmbNationality;
+        private Label LblEntryDate;
+        private Label LblPrivatePhone;
+        private Label LblWorkload;
+        private Label LblExitDate;
+        private Label LblRole;
+        private Label LblMgmtLevel;
+        private NumericUpDown NumPostalCode;
+        private DateTimePicker dateTimePickerExitDate;
+        private TextBox TxtCompanyName;
+        private Label LblCompanyName;
+        private Label LblCustomerType;
+        private Label LblBusinessAddress;
+        private Label LblAppYears;
+        private Label LblCurrentAppYear;
+        private DateTimePicker dateTimePickerEntryDate;
+        private ComboBox CmbWorkload;
+        private Label LblCompanyContact;
+        private ComboBox CmbCompanyContact;
+        private TextBox TxtPrivatePhone;
+        private NumericUpDown NumCurrentAppYear;
+        private TextBox TxtBusinessAddress;
+        private ComboBox CmbCustomerType;
+        private TextBox TxtMailadress;
+        private ComboBox CmbMgmtLevel;
+        private ComboBox CmbAppYears;
+        private ComboBox CmbRole;
     }
 }
