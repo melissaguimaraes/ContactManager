@@ -3,9 +3,12 @@ using System.Net;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
+
 using ContactManager.Models;  // maybe need to change once I want to use the properties of obj
 using System.Text.Json;
 using System.CodeDom.Compiler;
+
+
 
 namespace ContactManager.MainWin
 {
@@ -20,6 +23,7 @@ namespace ContactManager.MainWin
 
             gridViewContactList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             gridViewContactList.ReadOnly = true;
+            gridViewContactList.CellDoubleClick += gridViewContactList_DoubleClick;
         }
 
         // button reads input from searchtextbox compares to text file and returns findings inside ContactList group box
@@ -78,6 +82,22 @@ namespace ContactManager.MainWin
 
             }
 
+        }
+
+        // gets contact form and displays the selected contact
+        private void gridViewContactList_DoubleClick(object sender, EventArgs e )
+        {
+            if (gridViewContactList.CurrentRow == null) return;               
+
+            var selectedRow = gridViewContactList.CurrentRow.DataBoundItem as Contact;
+
+            if (selectedRow == null) return ;
+
+            using (var dlg = new ContactManager.ContactWin.ContactWin(selectedRow))
+            {
+                dlg.ShowDialog(this);
+            }
+           
         }
 
         private void BtnAddNewContact_Click(object sender, EventArgs e)

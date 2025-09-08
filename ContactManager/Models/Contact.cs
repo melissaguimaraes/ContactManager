@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ContactManager.Models
 {
-    internal class Contact
+    public class Contact
     {
         
         public string Salutation { get; set; }                
@@ -23,9 +23,9 @@ namespace ContactManager.Models
         public string EmployeeNumber { get; set; }            
         public string Department { get; set; }                
         public string AhvNumber { get; set; }                 
-        public string Residence { get; set; }                  
+        public string City { get; set; }                  
         public string Nationality { get; set; }                
-        public string Address { get; set; }                    
+        public string Street { get; set; }                    
         public string PostalCode { get; set; }                 
         public string PrivatePhone { get; set; }               
         public DateOnly? EntryDate { get; set; }              

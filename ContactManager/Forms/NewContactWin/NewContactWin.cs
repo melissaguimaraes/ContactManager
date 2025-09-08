@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ContactManager.Models;
 
 namespace ContactManager.NewContactWin
 {
@@ -26,5 +27,46 @@ namespace ContactManager.NewContactWin
                 this.Close();
             }
         }
+
+
+        // disable text fields - no edit
+
+        protected void ContactFormNoEdit(bool readOnly)
+        {
+            void Walk(Control parent)
+            {
+                foreach (Control child in parent.Controls)
+                {
+                    switch (child)
+                    {
+                        case TextBox tb:
+                            tb.ReadOnly = readOnly;
+                            break;
+                        case ComboBox cmb:
+                            cmb.Enabled = !readOnly;
+                            break;
+                        case DateTimePicker dtP:
+                            dtP.Enabled = !readOnly;
+                            break;
+                        case NumericUpDown nuD:
+                            nuD.Enabled = !readOnly;
+                            break;
+                        case CheckBox cb:
+                            cb.Checked = !readOnly;
+                            break;
+                        case RadioButton:
+                            child.Enabled = !readOnly;
+                            break;
+                    }
+
+                    if (child.HasChildren) Walk(child);
+                }
+
+            }
+
+            Walk(this);
+        }
+
+
     }
 }
