@@ -1,0 +1,39 @@
+[33mf4b36fe[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcreate_ContactForm[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{0}: checkout: moving from master to create_ContactForm
+[33mf4b36fe[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcreate_ContactForm[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{1}: checkout: moving from create_ContactForm to master
+[33m0b0902d[m[33m ([m[1;32mcontactWin_showContact_in_form[m[33m)[m HEAD@{2}: checkout: moving from master to create_ContactForm
+[33mf4b36fe[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcreate_ContactForm[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{3}: checkout: moving from create_ContactForm to master
+[33m0b0902d[m[33m ([m[1;32mcontactWin_showContact_in_form[m[33m)[m HEAD@{4}: checkout: moving from create_ContactForm to create_ContactForm
+[33m0b0902d[m[33m ([m[1;32mcontactWin_showContact_in_form[m[33m)[m HEAD@{5}: checkout: moving from contactWin_showContact_in_form to create_ContactForm
+[33m0b0902d[m[33m ([m[1;32mcontactWin_showContact_in_form[m[33m)[m HEAD@{6}: checkout: moving from contactWin_showContact_in_form to contactWin_showContact_in_form
+[33m0b0902d[m[33m ([m[1;32mcontactWin_showContact_in_form[m[33m)[m HEAD@{7}: checkout: moving from master to contactWin_showContact_in_form
+[33mf4b36fe[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcreate_ContactForm[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{8}: checkout: moving from mainWin_searchbar_creation to master
+[33md1c790b[m HEAD@{9}: checkout: moving from master to mainWin_searchbar_creation
+[33mf4b36fe[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcreate_ContactForm[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{10}: checkout: moving from mainWin_searchbar_creation to master
+[33md1c790b[m HEAD@{11}: checkout: moving from master to mainWin_searchbar_creation
+[33mf4b36fe[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcreate_ContactForm[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{12}: checkout: moving from mainWin_contactList_made_clickable to master
+[33m5b76a24[m HEAD@{13}: checkout: moving from master to mainWin_contactList_made_clickable
+[33mf4b36fe[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcreate_ContactForm[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{14}: checkout: moving from mainWin_contactList_made_clickable to master
+[33m5b76a24[m HEAD@{15}: checkout: moving from master to mainWin_contactList_made_clickable
+[33mf4b36fe[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcreate_ContactForm[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{16}: reset: moving to HEAD
+[33mf4b36fe[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcreate_ContactForm[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{17}: checkout: moving from contactWin_showContact_in_form to master
+[33m0b0902d[m[33m ([m[1;32mcontactWin_showContact_in_form[m[33m)[m HEAD@{18}: reset: moving to HEAD
+[33m0b0902d[m[33m ([m[1;32mcontactWin_showContact_in_form[m[33m)[m HEAD@{19}: commit: adding contact form
+[33m3c1552c[m HEAD@{20}: commit (merge): update main
+[33m2b2559e[m HEAD@{21}: checkout: moving from master to contactWin_showContact_in_form
+[33mf4b36fe[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcreate_ContactForm[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{22}: pull --progress --no-edit --no-stat --recurse-submodules=no origin: Fast-forward
+[33m7e9c70d[m HEAD@{23}: checkout: moving from contactWin_showContact_in_form to master
+[33m2b2559e[m HEAD@{24}: commit: function to show data on contactwin
+[33m3d1298a[m HEAD@{25}: reset: moving to HEAD
+[33m3d1298a[m HEAD@{26}: commit: displaying contact info
+[33m7ddf334[m[33m ([m[1;31morigin/contactWin_showContact_in_form[m[33m, [m[1;31morigin/confirmationWin_popupCreation[m[33m)[m HEAD@{27}: checkout: moving from mainWin_contactList_made_clickable to contactWin_showContact_in_form
+[33m5b76a24[m HEAD@{28}: commit: enter key press
+[33md1c790b[m HEAD@{29}: checkout: moving from mainWin_searchbar_creation to mainWin_contactList_made_clickable
+[33md1c790b[m HEAD@{30}: checkout: moving from mainWin_contactList_made_clickable to mainWin_searchbar_creation
+[33md1c790b[m HEAD@{31}: checkout: moving from mainWin_searchbar_creation to mainWin_contactList_made_clickable
+[33md1c790b[m HEAD@{32}: commit: showContacts button functionality
+[33ma9ed796[m HEAD@{33}: commit: structure change + json added
+[33m7e9c70d[m HEAD@{34}: checkout: moving from master to mainWin_searchbar_creation
+[33m7e9c70d[m HEAD@{35}: checkout: moving from mainWin_searchbar_creation to master
+[33m7e9c70d[m HEAD@{36}: checkout: moving from master to mainWin_searchbar_creation
+[33m7e9c70d[m HEAD@{37}: commit: Add project files.
+[33m1bcae6c[m HEAD@{38}: commit (initial): Add .gitattributes and .gitignore.
