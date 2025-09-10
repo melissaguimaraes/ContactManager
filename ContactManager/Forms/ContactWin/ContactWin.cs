@@ -46,6 +46,7 @@ namespace ContactManager.ContactWin
         private void LoadContact(ContactModel c)
         {
 
+            TxtEmployeeNo.Text = c.EmployeeNumber ?? "";
             CmbSalutation.Text = c.Salutation ?? "";
             TxtFirstname.Text = c.FirstName ?? "";
             TxtLastname.Text = c.LastName ?? "";
@@ -55,8 +56,7 @@ namespace ContactManager.ContactWin
             TxtBusinessPhone.Text = c.BusinessPhone ?? "";
             TxtMobilePhone.Text = c.MobilePhone ?? "";
             TxtMailadress.Text = c.EmailAddress ?? "";
-            CmbStatus.Text = c.Status ?? "";
-            TxtEmployeeNo.Text = c.EmployeeNumber ?? "";
+            CmbStatus.Text = c.Status ?? "";            
             CmbDepartment.Text = c.Department ?? "";
             TxtAHV.Text = c.AhvNumber ?? "";
             TextCity.Text = c.City ?? "";

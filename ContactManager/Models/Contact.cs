@@ -8,7 +8,8 @@ namespace ContactManager.Models
 {
     public class Contact
     {
-        
+
+        public string EmployeeNumber { get; set; }
         public string Salutation { get; set; }                
         public string FirstName { get; set; }                 
         public string LastName { get; set; }                  
@@ -18,9 +19,7 @@ namespace ContactManager.Models
         public string BusinessPhone { get; set; }             
         public string MobilePhone { get; set; }               
         public string EmailAddress { get; set; }              
-        public string Status { get; set; }                    
-
-        public string EmployeeNumber { get; set; }            
+        public string Status { get; set; }    
         public string Department { get; set; }                
         public string AhvNumber { get; set; }                 
         public string City { get; set; }                  

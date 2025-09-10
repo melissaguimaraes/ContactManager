@@ -1,5 +1,6 @@
 [
   {
+    "EmployeeNumber": "0001",
     "Salutation": "Ms.",
     "FirstName": "Anna",
     "LastName": "Müller",
@@ -10,7 +11,6 @@
     "MobilePhone": "+41 79 111 22 33",
     "EmailAddress": "anna.mueller@example.com",
     "Status": "active",
-    "EmployeeNumber": "0001",
     "Department": "Engineering",
     "AhvNumber": "756.1234.5678.97",
     "City": "Zurich",
@@ -31,6 +31,7 @@
     "CompanyContact": "Hans Meier"
   },
   {
+    "EmployeeNumber": "0002",
     "Salutation": "Mr.",
     "FirstName": "Mark",
     "LastName": "Keller",
@@ -41,7 +42,6 @@
     "MobilePhone": "+41 79 333 44 55",
     "EmailAddress": "mark.keller@example.com",
     "Status": "active",
-    "EmployeeNumber": "0002",
     "Department": "IT",
     "AhvNumber": "756.2345.6789.88",
     "City": "Bern",
@@ -62,6 +62,7 @@
     "CompanyContact": "Anna Müller"
   },
   {
+    "EmployeeNumber": "0003",
     "Salutation": "Ms.",
     "FirstName": "Sophie",
     "LastName": "Dubois",
@@ -72,7 +73,6 @@
     "MobilePhone": "+41 78 123 45 67",
     "EmailAddress": "sophie.dubois@example.com",
     "Status": "active",
-    "EmployeeNumber": "0003",
     "Department": "Marketing",
     "AhvNumber": "756.3456.7890.79",
     "City": "Lausanne",
@@ -93,6 +93,7 @@
     "CompanyContact": "Mark Keller"
   },
   {
+    "EmployeeNumber": "0005",
     "Salutation": "Mr.",
     "FirstName": "Hans",
     "LastName": "Meier",
@@ -103,7 +104,6 @@
     "MobilePhone": "+41 79 222 33 44",
     "EmailAddress": "hans.meier@example.com",
     "Status": "active",
-    "EmployeeNumber": "0005",
     "Department": "Finance",
     "AhvNumber": "756.5678.9012.45",
     "City": "Zurich",
@@ -124,6 +124,7 @@
     "CompanyContact": "Anna Müller"
   },
   {
+    "EmployeeNumber": "0006",
     "Salutation": "Ms.",
     "FirstName": "Maria",
     "LastName": "Lopez",
@@ -134,7 +135,6 @@
     "MobilePhone": "+41 79 654 32 10",
     "EmailAddress": "maria.lopez@example.com",
     "Status": "active",
-    "EmployeeNumber": "0006",
     "Department": "Customer Service",
     "AhvNumber": "756.6789.0123.56",
     "City": "Basel",
@@ -155,6 +155,7 @@
     "CompanyContact": "Mark Keller"
   },
   {
+    "EmployeeNumber": "0007",
     "Salutation": "Mr.",
     "FirstName": "David",
     "LastName": "Nguyen",
@@ -165,7 +166,6 @@
     "MobilePhone": "+41 79 765 43 21",
     "EmailAddress": "david.nguyen@example.com",
     "Status": "active",
-    "EmployeeNumber": "0007",
     "Department": "IT",
     "AhvNumber": "756.7890.1234.67",
     "City": "Lucerne",
@@ -186,6 +186,7 @@
     "CompanyContact": "Hans Meier"
   },
   {
+    "EmployeeNumber": "0008",
     "Salutation": "Ms.",
     "FirstName": "Laura",
     "LastName": "Schneider",
@@ -196,7 +197,6 @@
     "MobilePhone": "+41 79 888 55 11",
     "EmailAddress": "laura.schneider@example.com",
     "Status": "active",
-    "EmployeeNumber": "0008",
     "Department": "HR",
     "AhvNumber": "756.8901.2345.78",
     "City": "St. Gallen",
@@ -217,6 +217,7 @@
     "CompanyContact": "Sophie Dubois"
   },
   {
+    "EmployeeNumber": "0009",
     "Salutation": "Mr.",
     "FirstName": "Peter",
     "LastName": "Steiner",
@@ -227,7 +228,6 @@
     "MobilePhone": "+41 79 444 22 11",
     "EmailAddress": "peter.steiner@example.com",
     "Status": "active",
-    "EmployeeNumber": "0009",
     "Department": "Logistics",
     "AhvNumber": "756.9012.3456.89",
     "City": "Winterthur",
@@ -248,6 +248,7 @@
     "CompanyContact": "Anna Müller"
   },
   {
+    "EmployeeNumber": "0010",
     "Salutation": "Ms.",
     "FirstName": "Nina",
     "LastName": "Weber",
@@ -258,7 +259,6 @@
     "MobilePhone": "+41 79 555 66 77",
     "EmailAddress": "nina.weber@example.com",
     "Status": "active",
-    "EmployeeNumber": "0010",
     "Department": "Engineering",
     "AhvNumber": "756.0123.4567.90",
     "City": "Biel",
@@ -279,6 +279,7 @@
     "CompanyContact": "Hans Meier"
   },
   {
+    "EmployeeNumber": "0011",
     "Salutation": "Ms.",
     "FirstName": "Alisson",
     "LastName": "Smith",
@@ -289,7 +290,6 @@
     "MobilePhone": "+41 79 222 33 88",
     "EmailAddress": "alisson.smith@example.com",
     "Status": "active",
-    "EmployeeNumber": "0011",
     "Department": "Support",
     "AhvNumber": "756.1122.3344.55",
     "City": "Fribourg",
@@ -310,6 +310,7 @@
     "CompanyContact": "David Nguyen"
   },
   {
+    "EmployeeNumber": "0012",
     "Salutation": "Ms.",
     "FirstName": "Julia",
     "LastName": "Fischer",
@@ -320,7 +321,6 @@
     "MobilePhone": "+41 79 999 11 22",
     "EmailAddress": "julia.fischer@example.com",
     "Status": "active",
-    "EmployeeNumber": "0012",
     "Department": "Finance",
     "AhvNumber": "756.2233.4455.66",
     "City": "Lucerne",
