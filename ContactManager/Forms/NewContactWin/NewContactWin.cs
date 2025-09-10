@@ -29,6 +29,7 @@ namespace ContactManager.NewContactWin
         }
 
 
+
         // disable text fields - no edit
 
         protected void ContactFormNoEdit(bool readOnly)
