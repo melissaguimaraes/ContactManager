@@ -1,0 +1,54 @@
+[
+  {
+    "ChangedBy": "Max Mustermann",
+    "ActionName": "Neuer Kontakt erstellt",
+    "Timestamp": "2023-01-15T09:00:00",
+    "BeforeChange": null,
+    "AfterChange": {
+      "EmployeeNumber": "0001",
+      "Salutation": "Ms.",
+      "FirstName": "Anna",
+      "LastName": "Müller",
+      "DateOfBirth": "1990-05-12",
+      "Gender": "Female",
+      "Title": "Dr.",
+      "BusinessPhone": "+41 44 123 45 67",
+      "MobilePhone": "+41 79 111 22 33",
+      "EmailAddress": "anna.mueller@example.com",
+      "Status": "active",
+      "Department": "Engineering",
+      "AhvNumber": "756.1234.5678.97",
+      "City": "Zurich",
+      "Nationality": "Swiss",
+      "Street": "Bahnhofstrasse 10",
+      "PostalCode": "8000",
+      "PrivatePhone": "+41 44 765 43 21",
+      "EntryDate": "2015-01-10",
+      "ExitDate": null,
+      "Workload": "100%",
+      "Role": "Engineer",
+      "ManagementLevel": 2,
+      "ApprenticeshipYears": null,
+      "CurrentApprenticeshipYear": null,
+      "CompanyName": "TechCorp AG",
+      "BusinessAddress": "Industriestrasse 22",
+      "CustomerType": "A",
+      "CompanyContact": "Hans Meier"
+    }
+  },
+  {
+    "ChangedBy": "Admin",
+    "ActionName": "Kontakt aktualisiert",
+    "Timestamp": "2024-06-20T14:30:00",
+    "BeforeChange": {
+      "EmployeeNumber": "0001",
+      "EmailAddress": "anna.mueller@example.com",
+      "Workload": "100%"
+    },
+    "AfterChange": {
+      "EmployeeNumber": "0001",
+      "EmailAddress": "anna.m@example.com",
+      "Workload": "80%"
+    }
+  }
+]

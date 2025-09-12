@@ -122,6 +122,7 @@
             gridViewContactList.RowHeadersWidth = 51;
             gridViewContactList.Size = new Size(1060, 438);
             gridViewContactList.TabIndex = 0;
+            gridViewContactList.CellContentClick += gridViewContactList_CellContentClick;
             // 
             // BtnAddNewContact
             // 

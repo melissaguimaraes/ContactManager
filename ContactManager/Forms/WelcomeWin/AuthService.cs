@@ -9,6 +9,7 @@ namespace ContactManager
     
     public static class AuthService
     {
+        public static string User = null;
         // 3 users incl pw
         private static readonly Dictionary<string, string> Users = new(StringComparer.OrdinalIgnoreCase)
         {
@@ -18,6 +19,8 @@ namespace ContactManager
         };
 
         public static string? CurrentUser { get; private set; }
+
+
 
         // checks username/password 
 
@@ -29,6 +32,7 @@ namespace ContactManager
             if (Users.TryGetValue(username.Trim(), out var pw) && pw == password)
             {
                 CurrentUser = username.Trim();
+
                 return true;
             }
             return false;
