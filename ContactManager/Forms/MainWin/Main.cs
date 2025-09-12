@@ -8,8 +8,6 @@ using ContactManager.Models;  // maybe need to change once I want to use the pro
 using System.Text.Json;
 using System.CodeDom.Compiler;
 
-
-
 namespace ContactManager.MainWin
 {
     public partial class Main : Form
@@ -17,6 +15,8 @@ namespace ContactManager.MainWin
         public Main()
         {
             InitializeComponent();
+
+            ShowContactButton_Click(null, null);
 
             // allows enter on keyboard
             this.AcceptButton = ShowContactButton;
@@ -85,24 +85,34 @@ namespace ContactManager.MainWin
         }
 
         // gets contact form and displays the selected contact
-        private void gridViewContactList_DoubleClick(object sender, EventArgs e )
+        private void gridViewContactList_DoubleClick(object sender, EventArgs e)
         {
-            if (gridViewContactList.CurrentRow == null) return;               
+            if (gridViewContactList.CurrentRow == null) return;
 
             var selectedRow = gridViewContactList.CurrentRow.DataBoundItem as Contact;
 
-            if (selectedRow == null) return ;
+            if (selectedRow == null) return;
 
-            using (var dlg = new ContactManager.ContactWin.ContactWin(selectedRow))
+            
+            using (var dlg = new ContactManager.NewContactWin.NewContactWin(selectedRow))
             {
                 dlg.ShowDialog(this);
             }
-           
+
+            ShowContactButton_Click(this, EventArgs.Empty);
+
         }
 
         private void BtnAddNewContact_Click(object sender, EventArgs e)
         {
             new NewContactWin.NewContactWin().ShowDialog();
+
+            ShowContactButton_Click(this, EventArgs.Empty);
+
+        }
+
+        private void gridViewContactList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

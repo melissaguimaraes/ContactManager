@@ -77,7 +77,7 @@
             txtPass.Name = "txtPass";
             txtPass.Size = new Size(100, 23);
             txtPass.TabIndex = 4;
-            txtPass.UseSystemPasswordChar = true;
+            
             // 
             // chkShow
             // 
@@ -88,6 +88,7 @@
             chkShow.TabIndex = 5;
             chkShow.Text = "Show password";
             chkShow.UseVisualStyleBackColor = true;
+            chkShow.CheckedChanged += chkShow_CheckedChanged_1;
             // 
             // btnLogin
             // 

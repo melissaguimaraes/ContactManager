@@ -18,6 +18,8 @@ namespace ContactManager
         {
             InitializeComponent();
 
+            txtPass.UseSystemPasswordChar = true;
+
             this.AcceptButton = btnLogin;
         }
 
@@ -35,7 +37,7 @@ namespace ContactManager
 
             if (AuthService.Validate(user, pass))
             {
-                
+
                 // when userlogin valid it redirects to mainWin
                 Main main = new Main();
                 main.Show();
@@ -50,10 +52,13 @@ namespace ContactManager
             }
         }
 
-        private void chkShow_CheckedChanged(object sender, EventArgs e)
+        private void chkShow_CheckedChanged_1(object sender, EventArgs e)
         {
-            txtPass.UseSystemPasswordChar = !chkShow.Checked;
+            txtPass.UseSystemPasswordChar = !txtPass.UseSystemPasswordChar;
+            txtPass.Update();
         }
+
+        
     }
 }
 

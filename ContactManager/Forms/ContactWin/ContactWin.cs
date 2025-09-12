@@ -8,8 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-
+using System.Windows.Forms.VisualStyles;
 using BaseForm = ContactManager.NewContactWin.NewContactWin;
 
 // grabing contact CLASS 
@@ -21,28 +20,31 @@ namespace ContactManager.ContactWin
     public partial class ContactWin : BaseForm
     {
 
-        private readonly ContactModel _contact;
 
-       
-        public ContactWin() 
+        private readonly ContactModel _contact;
+        private FormState formState;
+
+        public ContactWin()
         {
             InitializeComponent();
-            this.Text = "Contact Details";
-                                    
+            this.Text = "Add New Contact";
+            SetFormState(FormState.AddNew);
         }
 
+        // View mode
         // it inherits form from NewContact and loads contact into it - blocks edit
-        public ContactWin(ContactModel contToDisplay) : base()
+        public ContactWin(Contact contToDisplay)
         {
+            InitializeComponent();
+
             _contact = contToDisplay ?? throw new ArgumentNullException(nameof(contToDisplay));
             LoadContact(_contact);
 
-            ContactFormNoEdit(true);
-            BtnCancelNewContact.Hide();
-            BtnSaveNewContact.Hide();
-
+            SetFormState(FormState.View);
+            BtnCancelContact.Hide();
+            BtnSaveContact.Hide();
         }
-        
+
         private void LoadContact(ContactModel c)
         {
 
@@ -56,7 +58,7 @@ namespace ContactManager.ContactWin
             TxtBusinessPhone.Text = c.BusinessPhone ?? "";
             TxtMobilePhone.Text = c.MobilePhone ?? "";
             TxtMailadress.Text = c.EmailAddress ?? "";
-            CmbStatus.Text = c.Status ?? "";            
+            CmbStatus.Text = c.Status ?? "";
             CmbDepartment.Text = c.Department ?? "";
             TxtAHV.Text = c.AhvNumber ?? "";
             TextCity.Text = c.City ?? "";
@@ -65,18 +67,86 @@ namespace ContactManager.ContactWin
             NumPostalCode.Text = c.PostalCode?.ToString() ?? "";
             TxtPrivatePhone.Text = c.PrivatePhone ?? "";
             dateTimePickerEntryDate.Text = c.EntryDate?.ToString() ?? "";
-            dateTimePickerExitDate.Text = c.ExitDate?.ToString() ?? "";              
-            CmbWorkload.Text = c.Workload ?? "";           
+            dateTimePickerExitDate.Text = c.ExitDate?.ToString() ?? "";
+            CmbWorkload.Text = c.Workload ?? "";
             CmbRole.Text = c.Role ?? "";
             CmbMgmtLevel.Text = c.ManagementLevel?.ToString() ?? "";
-            CmbAppYears.SelectedItem = c.ApprenticeshipYears ?? 0;   
-            NumCurrentAppYear.Value = c.CurrentApprenticeshipYear ?? 0;   
+            CmbAppYears.SelectedItem = c.ApprenticeshipYears ?? 0;
+            NumCurrentAppYear.Value = c.CurrentApprenticeshipYear ?? 0;
             TxtCompanyName.Text = c.CompanyName ?? "";
             TxtBusinessAddress.Text = c.BusinessAddress ?? "";
             CmbCustomerType.Text = c.CustomerType ?? "";
             CmbCompanyContact.Text = c.CompanyContact ?? "";
-            
+
         }
 
+        private void SetFormState(FormState state)
+        {
+            formState = state;
+
+            bool isEditable = state == FormState.Edit || state == FormState.AddNew;
+
+            // Enable or disable controls
+            TxtEmployeeNo.ReadOnly = !isEditable;
+            CmbSalutation.Enabled = isEditable;
+            TxtFirstname.ReadOnly = !isEditable;
+            TxtLastname.ReadOnly = !isEditable;
+            dateTimePickerDateOfBirth.Enabled = isEditable;
+            CmbGender.Enabled = isEditable;
+            CmbTitle.Enabled = isEditable;
+            TxtBusinessPhone.ReadOnly = !isEditable;
+            TxtMobilePhone.ReadOnly = !isEditable;
+            TxtMailadress.ReadOnly = !isEditable;
+            CmbStatus.Enabled = isEditable;
+            CmbDepartment.Enabled = isEditable;
+            TxtAHV.ReadOnly = !isEditable;
+            TextCity.ReadOnly = !isEditable;
+            CmbNationality.Enabled = isEditable;
+            TxtStreet.ReadOnly = !isEditable;
+            NumPostalCode.Enabled = isEditable;
+            TxtPrivatePhone.ReadOnly = !isEditable;
+            dateTimePickerEntryDate.Enabled = isEditable;
+            dateTimePickerExitDate.Enabled = isEditable;
+            CmbWorkload.Enabled = isEditable;
+            CmbRole.Enabled = isEditable;
+            CmbMgmtLevel.Enabled = isEditable;
+            CmbAppYears.Enabled = isEditable;
+            NumCurrentAppYear.Enabled = isEditable;
+            TxtCompanyName.ReadOnly = !isEditable;
+            TxtBusinessAddress.ReadOnly = !isEditable;
+            CmbCustomerType.Enabled = isEditable;
+            CmbCompanyContact.Enabled = isEditable;
+
+            // Optional: toggle Save/Edit/Add buttons
+            BtnSaveContact.Visible = isEditable;
+            BtnCancelContact.Visible = isEditable;
+            BtnEditContact.Visible = state == FormState.View;
+        }
+
+
+        private void BtnSaveNewContact_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtEmployeeNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnEditContact_Click(object sender, EventArgs e)
+        {
+            SetFormState(FormState.Edit);
+        }
+
+        private void BtnViewHistory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCancelNewContact_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
