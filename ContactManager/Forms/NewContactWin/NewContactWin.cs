@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ContactManager.Forms.ActivityWin;
 
 namespace ContactManager.NewContactWin
 {
@@ -27,6 +28,7 @@ namespace ContactManager.NewContactWin
             this.Text = "Add New Contact";
             SetFormState(FormState.AddNew);
 
+            // sets button state for add new mode
             BtnViewHistory.Hide();
             BtnDeleteContact.Hide();
             BtnSaveContact.Show();
@@ -313,9 +315,17 @@ namespace ContactManager.NewContactWin
 
         }
 
+        /*
+        Shows activity comments modal for current user
+
+        @parameter: sender
+        @parameter: e (event)
+        */
         private void BtnActivities_Click(object sender, EventArgs e)
         {
+            ActivityWin activityWin = new ActivityWin(this.current_contact);
 
+            activityWin.ShowDialog();
         }
     }
 }

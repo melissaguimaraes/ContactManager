@@ -13,10 +13,16 @@ namespace ContactManager.Helper
     internal class ContactHandler
     {
         private static ContactHandler _contactHandler = new ContactHandler();
+        // local path to contacts.json
         private static string contact_path = "Data/contacts.json";
 
         private ContactHandler() { }
 
+        /*
+        retunrns singelton inctance of ContactHandler Object
+
+        @return: _contactHandler
+        */
         public static ContactHandler GetContactHandler()
         {
             return _contactHandler;
@@ -33,32 +39,30 @@ namespace ContactManager.Helper
                 return new List<Contact>();
 
             string json = File.ReadAllText(contact_path);
+            
+            // json serialize options for converting DateTime in specific date format (yyyy-MM-dd)
             var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true, Converters = { new DateOnlyJsonConverter() } };
 
             return JsonSerializer.Deserialize<List<Contact>>(json, options) ?? new List<Contact>();
         }
 
         /*
-        Saves List of contacts as new json content
+        Saves List of contacts as new json content and saves it to file
 
         @parameter: contacts
-
-        @return: 
         */
         public void SaveContacts(List<Contact> contacts)
         {
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true,
-                Converters = { new DateOnlyJsonConverter() }
-            };
+            // options for JSON Identation
+            var options = new JsonSerializerOptions{ WriteIndented = true,Converters = { new DateOnlyJsonConverter() }};
 
             string json = JsonSerializer.Serialize(contacts, options);
+
             File.WriteAllText(contact_path, json);
         }
-
+        
         /*
-        Add new contact
+        Adds new contact
 
         @parameter: newContact
         @return: void
@@ -67,16 +71,16 @@ namespace ContactManager.Helper
         {
             var contacts = LoadContacts();
 
-            // Get highest employe number
-            int maxNumber = contacts
-                .Select(c => int.TryParse(c.EmployeeNumber, out int num) ? num : 0)
-                .DefaultIfEmpty(0)
-                .Max();
+            // gets last element of ordered json file and gets current max id/number
+            int maxNumber = int.Parse(contacts[contacts.Count - 1].EmployeeNumber);
 
+            // Creates new contact with (current max number) + 1 
             // leading digits with zeros
             newContact.EmployeeNumber = (maxNumber + 1).ToString("D4");
 
+            // add new contact to current list
             contacts.Add(newContact);
+
             SaveContacts(contacts);
         }
 
@@ -88,29 +92,36 @@ namespace ContactManager.Helper
         */
         public void UpdateContact(Contact updatedContact)
         {
+
             var contacts = LoadContacts();
+
+            // gets position of the contact which will be updated
             var index = contacts.FindIndex(c => c.EmployeeNumber == updatedContact.EmployeeNumber);
 
+            // throws exception if employe is not in list
             if (index == -1)
                 throw new InvalidOperationException("Contact not found for update.");
 
+            // updates contact
             contacts[index] = updatedContact;
+
             SaveContacts(contacts);
         }
 
         /*
         Delete contact
 
-        @parameter: deleteContact
+        @parameter: deletesContact
         @return: void
         */
         public void DeleteContact(Contact deleteContact)
         {
             List<Contact> contacts = LoadContacts();
 
+            // search algo to find contact in imported list
             for (int i = 0; i < contacts.Count; i++)
             {
-
+                // removes contact at the found postion
                 if (deleteContact.EmployeeNumber == contacts[i].EmployeeNumber)
                 {
                     contacts.RemoveAt(i);
@@ -124,7 +135,7 @@ namespace ContactManager.Helper
 }
 
 
-// custom Json Serializer to convert dates into datetime format
+// custom Json Serializer to convert dates into datetime format  (yyyy-MM-dd)
 public class DateOnlyJsonConverter : JsonConverter<DateOnly?>
 {
     /*

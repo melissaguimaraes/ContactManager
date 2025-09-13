@@ -31,6 +31,7 @@
             SearchByTextBox = new TextBox();
             searchLbl = new Label();
             SearchBox = new GroupBox();
+            BtnLogout = new Button();
             ShowContactButton = new Button();
             SearcByTxtBox = new TextBox();
             searchLabel = new Label();
@@ -58,6 +59,7 @@
             // 
             // SearchBox
             // 
+            SearchBox.Controls.Add(BtnLogout);
             SearchBox.Controls.Add(ShowContactButton);
             SearchBox.Controls.Add(SearcByTxtBox);
             SearchBox.Controls.Add(searchLabel);
@@ -68,6 +70,16 @@
             SearchBox.Size = new Size(1065, 118);
             SearchBox.TabIndex = 0;
             SearchBox.TabStop = false;
+            // 
+            // BtnLogout
+            // 
+            BtnLogout.Location = new Point(991, 0);
+            BtnLogout.Name = "BtnLogout";
+            BtnLogout.Size = new Size(75, 23);
+            BtnLogout.TabIndex = 3;
+            BtnLogout.Text = "Logout";
+            BtnLogout.UseVisualStyleBackColor = true;
+            BtnLogout.Click += BtnLogout_Click;
             // 
             // ShowContactButton
             // 
@@ -122,7 +134,6 @@
             gridViewContactList.RowHeadersWidth = 51;
             gridViewContactList.Size = new Size(1060, 438);
             gridViewContactList.TabIndex = 0;
-            gridViewContactList.CellContentClick += gridViewContactList_CellContentClick;
             // 
             // BtnAddNewContact
             // 
@@ -163,5 +174,6 @@
         private GroupBox contactListBox;
         private DataGridView gridViewContactList;
         private Button BtnAddNewContact;
+        private Button BtnLogout;
     }
 }

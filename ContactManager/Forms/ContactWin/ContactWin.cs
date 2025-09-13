@@ -121,30 +121,16 @@ namespace ContactManager.ContactWin
             BtnEditContact.Visible = state == FormState.View;
         }
 
+        /*
+        Sets formstate -> Edit current contact
 
-        private void BtnSaveNewContact_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtEmployeeNo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        @parameter: sender
+        @parameter: e (event)
+        */
         private void BtnEditContact_Click(object sender, EventArgs e)
         {
             SetFormState(FormState.Edit);
         }
 
-        private void BtnViewHistory_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnCancelNewContact_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
