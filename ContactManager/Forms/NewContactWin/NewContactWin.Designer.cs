@@ -85,13 +85,15 @@
             CmbCustomerType = new ComboBox();
             TxtMailadress = new TextBox();
             CmbMgmtLevel = new ComboBox();
-            CmbAppYears = new ComboBox();
             CmbRole = new ComboBox();
             NumPostalCode = new TextBox();
             BtnEditContact = new Button();
             BtnViewHistory = new Button();
             BtnDeleteContact = new Button();
+            NumAppYears = new NumericUpDown();
+            BtnActivities = new Button();
             ((System.ComponentModel.ISupportInitialize)NumCurrentAppYear).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)NumAppYears).BeginInit();
             SuspendLayout();
             // 
             // LblSalutation
@@ -108,7 +110,7 @@
             TxtFirstname.Location = new Point(118, 97);
             TxtFirstname.Name = "TxtFirstname";
             TxtFirstname.Size = new Size(130, 23);
-            TxtFirstname.TabIndex = 1;
+            TxtFirstname.TabIndex = 6;
             // 
             // LblFirstname
             // 
@@ -142,7 +144,7 @@
             TextCity.Location = new Point(118, 369);
             TextCity.Name = "TextCity";
             TextCity.Size = new Size(238, 23);
-            TextCity.TabIndex = 7;
+            TextCity.TabIndex = 18;
             // 
             // LblMailadress
             // 
@@ -158,7 +160,7 @@
             TxtLastname.Location = new Point(342, 97);
             TxtLastname.Name = "TxtLastname";
             TxtLastname.Size = new Size(211, 23);
-            TxtLastname.TabIndex = 11;
+            TxtLastname.TabIndex = 7;
             // 
             // LblLastname
             // 
@@ -183,7 +185,7 @@
             TxtBusinessPhone.Location = new Point(159, 215);
             TxtBusinessPhone.Name = "TxtBusinessPhone";
             TxtBusinessPhone.Size = new Size(197, 23);
-            TxtBusinessPhone.TabIndex = 15;
+            TxtBusinessPhone.TabIndex = 12;
             // 
             // LblMobilePhone
             // 
@@ -210,14 +212,14 @@
             CmbSalutation.Location = new Point(118, 59);
             CmbSalutation.Name = "CmbSalutation";
             CmbSalutation.Size = new Size(62, 23);
-            CmbSalutation.TabIndex = 19;
+            CmbSalutation.TabIndex = 3;
             // 
             // BtnSaveContact
             // 
-            BtnSaveContact.Location = new Point(478, 690);
+            BtnSaveContact.Location = new Point(479, 690);
             BtnSaveContact.Name = "BtnSaveContact";
             BtnSaveContact.Size = new Size(75, 23);
-            BtnSaveContact.TabIndex = 20;
+            BtnSaveContact.TabIndex = 103;
             BtnSaveContact.Text = "Save";
             BtnSaveContact.UseVisualStyleBackColor = true;
             BtnSaveContact.Click += BtnSaveContact_Click;
@@ -227,7 +229,7 @@
             BtnCancelContact.Location = new Point(566, 690);
             BtnCancelContact.Name = "BtnCancelContact";
             BtnCancelContact.Size = new Size(75, 23);
-            BtnCancelContact.TabIndex = 21;
+            BtnCancelContact.TabIndex = 104;
             BtnCancelContact.Text = "Cancel";
             BtnCancelContact.UseVisualStyleBackColor = true;
             BtnCancelContact.Click += BtnCancel_Click;
@@ -237,7 +239,7 @@
             dateTimePickerDateOfBirth.Location = new Point(160, 139);
             dateTimePickerDateOfBirth.Name = "dateTimePickerDateOfBirth";
             dateTimePickerDateOfBirth.Size = new Size(197, 23);
-            dateTimePickerDateOfBirth.TabIndex = 22;
+            dateTimePickerDateOfBirth.TabIndex = 8;
             // 
             // CmbGender
             // 
@@ -246,7 +248,7 @@
             CmbGender.Location = new Point(430, 137);
             CmbGender.Name = "CmbGender";
             CmbGender.Size = new Size(131, 23);
-            CmbGender.TabIndex = 23;
+            CmbGender.TabIndex = 9;
             // 
             // CmbTitle
             // 
@@ -255,14 +257,14 @@
             CmbTitle.Location = new Point(264, 59);
             CmbTitle.Name = "CmbTitle";
             CmbTitle.Size = new Size(65, 23);
-            CmbTitle.TabIndex = 24;
+            CmbTitle.TabIndex = 4;
             // 
             // TxtMobilePhone
             // 
             TxtMobilePhone.Location = new Point(159, 177);
             TxtMobilePhone.Name = "TxtMobilePhone";
             TxtMobilePhone.Size = new Size(198, 23);
-            TxtMobilePhone.TabIndex = 25;
+            TxtMobilePhone.TabIndex = 10;
             // 
             // LblBusinessPhone
             // 
@@ -280,7 +282,7 @@
             CmbStatus.Location = new Point(370, 24);
             CmbStatus.Name = "CmbStatus";
             CmbStatus.Size = new Size(72, 23);
-            CmbStatus.TabIndex = 27;
+            CmbStatus.TabIndex = 2;
             // 
             // LblDepartment
             // 
@@ -296,7 +298,7 @@
             TxtAHV.Location = new Point(457, 215);
             TxtAHV.Name = "TxtAHV";
             TxtAHV.Size = new Size(178, 23);
-            TxtAHV.TabIndex = 30;
+            TxtAHV.TabIndex = 13;
             // 
             // LblAHV
             // 
@@ -321,7 +323,7 @@
             TxtStreet.Location = new Point(118, 334);
             TxtStreet.Name = "TxtStreet";
             TxtStreet.Size = new Size(238, 23);
-            TxtStreet.TabIndex = 34;
+            TxtStreet.TabIndex = 16;
             // 
             // LblStreet
             // 
@@ -374,7 +376,7 @@
             CmbDepartment.Location = new Point(159, 492);
             CmbDepartment.Name = "CmbDepartment";
             CmbDepartment.Size = new Size(170, 23);
-            CmbDepartment.TabIndex = 42;
+            CmbDepartment.TabIndex = 20;
             // 
             // CmbNationality
             // 
@@ -382,8 +384,9 @@
             CmbNationality.Items.AddRange(new object[] { "Albanian", "American", "Austrian", "Bosnian", "British", "Chinese", "Croatian", "Czech", "Dutch", "Filipino", "French", "German", "Greek", "Hungarian", "Iranian", "Italian", "Kosovar", "Polish", "Portuguese", "Romanian", "Russian", "Serbian", "Spanish", "Sri Lankan", "Swiss", "Thai", "Turkish" });
             CmbNationality.Location = new Point(457, 252);
             CmbNationality.Name = "CmbNationality";
+            CmbNationality.RightToLeft = RightToLeft.Yes;
             CmbNationality.Size = new Size(178, 23);
-            CmbNationality.TabIndex = 43;
+            CmbNationality.TabIndex = 15;
             // 
             // LblEntryDate
             // 
@@ -444,7 +447,7 @@
             dateTimePickerExitDate.Location = new Point(402, 613);
             dateTimePickerExitDate.Name = "dateTimePickerExitDate";
             dateTimePickerExitDate.Size = new Size(239, 23);
-            dateTimePickerExitDate.TabIndex = 59;
+            dateTimePickerExitDate.TabIndex = 28;
             dateTimePickerExitDate.Value = new DateTime(2999, 1, 1, 0, 0, 0, 0);
             // 
             // TxtCompanyName
@@ -452,7 +455,7 @@
             TxtCompanyName.Location = new Point(159, 453);
             TxtCompanyName.Name = "TxtCompanyName";
             TxtCompanyName.Size = new Size(140, 23);
-            TxtCompanyName.TabIndex = 67;
+            TxtCompanyName.TabIndex = 19;
             // 
             // LblCompanyName
             // 
@@ -504,7 +507,7 @@
             dateTimePickerEntryDate.Location = new Point(402, 577);
             dateTimePickerEntryDate.Name = "dateTimePickerEntryDate";
             dateTimePickerEntryDate.Size = new Size(239, 23);
-            dateTimePickerEntryDate.TabIndex = 71;
+            dateTimePickerEntryDate.TabIndex = 26;
             // 
             // CmbWorkload
             // 
@@ -513,7 +516,7 @@
             CmbWorkload.Location = new Point(588, 492);
             CmbWorkload.Name = "CmbWorkload";
             CmbWorkload.Size = new Size(53, 23);
-            CmbWorkload.TabIndex = 72;
+            CmbWorkload.TabIndex = 22;
             // 
             // LblCompanyContact
             // 
@@ -531,28 +534,28 @@
             CmbCompanyContact.Location = new Point(161, 532);
             CmbCompanyContact.Name = "CmbCompanyContact";
             CmbCompanyContact.Size = new Size(140, 23);
-            CmbCompanyContact.TabIndex = 77;
+            CmbCompanyContact.TabIndex = 23;
             // 
             // TxtPrivatePhone
             // 
             TxtPrivatePhone.Location = new Point(160, 252);
             TxtPrivatePhone.Name = "TxtPrivatePhone";
             TxtPrivatePhone.Size = new Size(197, 23);
-            TxtPrivatePhone.TabIndex = 79;
+            TxtPrivatePhone.TabIndex = 14;
             // 
             // NumCurrentAppYear
             // 
             NumCurrentAppYear.Location = new Point(211, 577);
             NumCurrentAppYear.Name = "NumCurrentAppYear";
             NumCurrentAppYear.Size = new Size(75, 23);
-            NumCurrentAppYear.TabIndex = 82;
+            NumCurrentAppYear.TabIndex = 25;
             // 
             // TxtBusinessAddress
             // 
             TxtBusinessAddress.Location = new Point(430, 453);
             TxtBusinessAddress.Name = "TxtBusinessAddress";
             TxtBusinessAddress.Size = new Size(205, 23);
-            TxtBusinessAddress.TabIndex = 83;
+            TxtBusinessAddress.TabIndex = 20;
             // 
             // CmbCustomerType
             // 
@@ -561,14 +564,14 @@
             CmbCustomerType.Location = new Point(440, 59);
             CmbCustomerType.Name = "CmbCustomerType";
             CmbCustomerType.Size = new Size(35, 23);
-            CmbCustomerType.TabIndex = 85;
+            CmbCustomerType.TabIndex = 5;
             // 
             // TxtMailadress
             // 
             TxtMailadress.Location = new Point(457, 177);
             TxtMailadress.Name = "TxtMailadress";
             TxtMailadress.Size = new Size(178, 23);
-            TxtMailadress.TabIndex = 86;
+            TxtMailadress.TabIndex = 11;
             // 
             // CmbMgmtLevel
             // 
@@ -577,16 +580,7 @@
             CmbMgmtLevel.Location = new Point(430, 532);
             CmbMgmtLevel.Name = "CmbMgmtLevel";
             CmbMgmtLevel.Size = new Size(75, 23);
-            CmbMgmtLevel.TabIndex = 87;
-            // 
-            // CmbAppYears
-            // 
-            CmbAppYears.FormattingEnabled = true;
-            CmbAppYears.Items.AddRange(new object[] { "1", "2", "3", "4" });
-            CmbAppYears.Location = new Point(211, 613);
-            CmbAppYears.Name = "CmbAppYears";
-            CmbAppYears.Size = new Size(75, 23);
-            CmbAppYears.TabIndex = 88;
+            CmbMgmtLevel.TabIndex = 24;
             // 
             // CmbRole
             // 
@@ -595,32 +589,32 @@
             CmbRole.Location = new Point(379, 492);
             CmbRole.Name = "CmbRole";
             CmbRole.Size = new Size(139, 23);
-            CmbRole.TabIndex = 89;
+            CmbRole.TabIndex = 21;
             // 
             // NumPostalCode
             // 
             NumPostalCode.Location = new Point(457, 335);
             NumPostalCode.Name = "NumPostalCode";
             NumPostalCode.Size = new Size(97, 23);
-            NumPostalCode.TabIndex = 90;
+            NumPostalCode.TabIndex = 17;
             // 
             // BtnEditContact
             // 
             BtnEditContact.Location = new Point(381, 690);
             BtnEditContact.Name = "BtnEditContact";
             BtnEditContact.Size = new Size(75, 23);
-            BtnEditContact.TabIndex = 91;
+            BtnEditContact.TabIndex = 102;
             BtnEditContact.Text = "Edit";
             BtnEditContact.UseVisualStyleBackColor = true;
             BtnEditContact.Click += BtnEditContact_Click;
             // 
             // BtnViewHistory
             // 
-            BtnViewHistory.Location = new Point(50, 690);
+            BtnViewHistory.Location = new Point(16, 690);
             BtnViewHistory.Name = "BtnViewHistory";
             BtnViewHistory.Size = new Size(104, 23);
-            BtnViewHistory.TabIndex = 92;
-            BtnViewHistory.Text = "View History";
+            BtnViewHistory.TabIndex = 99;
+            BtnViewHistory.Text = "Show History";
             BtnViewHistory.UseVisualStyleBackColor = true;
             BtnViewHistory.Click += BtnViewHistory_Click;
             // 
@@ -629,22 +623,40 @@
             BtnDeleteContact.Location = new Point(282, 690);
             BtnDeleteContact.Name = "BtnDeleteContact";
             BtnDeleteContact.Size = new Size(75, 23);
-            BtnDeleteContact.TabIndex = 93;
+            BtnDeleteContact.TabIndex = 101;
             BtnDeleteContact.Text = "Delete";
             BtnDeleteContact.UseVisualStyleBackColor = true;
             BtnDeleteContact.Click += BtnDeleteContact_Click;
+            // 
+            // NumAppYears
+            // 
+            NumAppYears.Location = new Point(211, 611);
+            NumAppYears.Name = "NumAppYears";
+            NumAppYears.Size = new Size(75, 23);
+            NumAppYears.TabIndex = 27;
+            // 
+            // BtnActivities
+            // 
+            BtnActivities.Location = new Point(126, 690);
+            BtnActivities.Name = "BtnActivities";
+            BtnActivities.Size = new Size(104, 23);
+            BtnActivities.TabIndex = 100;
+            BtnActivities.Text = "Show Actvities";
+            BtnActivities.UseVisualStyleBackColor = true;
+            BtnActivities.Click += BtnActivities_Click;
             // 
             // NewContactWin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(704, 747);
+            Controls.Add(BtnActivities);
+            Controls.Add(NumAppYears);
             Controls.Add(BtnDeleteContact);
             Controls.Add(BtnViewHistory);
             Controls.Add(BtnEditContact);
             Controls.Add(NumPostalCode);
             Controls.Add(CmbRole);
-            Controls.Add(CmbAppYears);
             Controls.Add(CmbMgmtLevel);
             Controls.Add(TxtMailadress);
             Controls.Add(CmbCustomerType);
@@ -706,6 +718,7 @@
             StartPosition = FormStartPosition.CenterParent;
             Text = "New Contact";
             ((System.ComponentModel.ISupportInitialize)NumCurrentAppYear).EndInit();
+            ((System.ComponentModel.ISupportInitialize)NumAppYears).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -769,11 +782,12 @@
         protected ComboBox CmbCustomerType;
         protected TextBox TxtMailadress;
         protected ComboBox CmbMgmtLevel;
-        protected ComboBox CmbAppYears;
         protected ComboBox CmbRole;
         protected TextBox NumPostalCode;
         private Button BtnEditContact;
         private Button BtnViewHistory;
         private Button BtnDeleteContact;
+        private NumericUpDown NumAppYears;
+        private Button BtnActivities;
     }
 }
