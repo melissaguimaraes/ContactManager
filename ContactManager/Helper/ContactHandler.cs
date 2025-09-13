@@ -22,21 +22,29 @@ namespace ContactManager.Helper
             return _contactHandler;
         }
 
+        /*
+        Gets current content of contacts.json file and returns it as List.
+
+        @return: Lists<Contact>
+        */
         public List<Contact> LoadContacts()
         {
             if (!File.Exists(contact_path))
                 return new List<Contact>();
 
             string json = File.ReadAllText(contact_path);
-            var options = new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true,
-                Converters = { new DateOnlyJsonConverter() }
-            };
+            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true, Converters = { new DateOnlyJsonConverter() } };
 
             return JsonSerializer.Deserialize<List<Contact>>(json, options) ?? new List<Contact>();
         }
 
+        /*
+        Saves List of contacts as new json content
+
+        @parameter: contacts
+
+        @return: 
+        */
         public void SaveContacts(List<Contact> contacts)
         {
             var options = new JsonSerializerOptions
@@ -49,6 +57,12 @@ namespace ContactManager.Helper
             File.WriteAllText(contact_path, json);
         }
 
+        /*
+        Add new contact
+
+        @parameter: newContact
+        @return: void
+        */
         public void AddContact(Contact newContact)
         {
             var contacts = LoadContacts();
@@ -66,6 +80,12 @@ namespace ContactManager.Helper
             SaveContacts(contacts);
         }
 
+        /*
+        Update existing contact
+
+        @parameter: updatedContact
+        @return: void
+        */
         public void UpdateContact(Contact updatedContact)
         {
             var contacts = LoadContacts();
@@ -78,6 +98,12 @@ namespace ContactManager.Helper
             SaveContacts(contacts);
         }
 
+        /*
+        Delete contact
+
+        @parameter: deleteContact
+        @return: void
+        */
         public void DeleteContact(Contact deleteContact)
         {
             List<Contact> contacts = LoadContacts();
@@ -95,14 +121,21 @@ namespace ContactManager.Helper
 
         }
     }
- }
-
-           
-            
+}
 
 
+// custom Json Serializer to convert dates into datetime format
 public class DateOnlyJsonConverter : JsonConverter<DateOnly?>
 {
+    /*
+        Reads a nullable DateOnly value from JSON.
+
+        @parameter: reader
+        @parameter: typeToConvert
+        @parameter: options
+    
+        @return: DateOnly? - parsed date if valid, otherwise null
+    */
     public override DateOnly? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         if (reader.TokenType == JsonTokenType.String &&
@@ -113,6 +146,15 @@ public class DateOnlyJsonConverter : JsonConverter<DateOnly?>
         return null;
     }
 
+    /*
+        Writes a nullable DateOnly value to JSON.
+
+        @parameter: writer
+        @parameter: value
+        @parameter: options
+    
+        @return: void
+    */
     public override void Write(Utf8JsonWriter writer, DateOnly? value, JsonSerializerOptions options)
     {
         if (value.HasValue)

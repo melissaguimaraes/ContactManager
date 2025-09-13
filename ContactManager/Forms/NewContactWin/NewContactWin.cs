@@ -26,10 +26,21 @@ namespace ContactManager.NewContactWin
             InitializeComponent();
             this.Text = "Add New Contact";
             SetFormState(FormState.AddNew);
+
+            BtnViewHistory.Hide();
+            BtnDeleteContact.Hide();
+            BtnSaveContact.Show();
+            BtnCancelContact.Show();
+            BtnActivities.Hide();
         }
 
-        // View mode
-        // it inherits form from NewContact and loads contact into it - blocks edit
+        /*
+         View mode constructor
+
+        @paramenter: contToDisplay
+            
+        */
+
         public NewContactWin(Contact contToDisplay)
         {
             InitializeComponent();
@@ -40,16 +51,27 @@ namespace ContactManager.NewContactWin
 
             LoadContact(contact);
 
+            // set button and form state
             SetFormState(FormState.View);
             BtnCancelContact.Hide();
             BtnSaveContact.Hide();
+            BtnDeleteContact.Show();
+            BtnActivities.Show();
         }
 
+        /*
+         cancel button with warning message, cancels edit and new contact form
+
+        @parameter: sender
+        @paramenter: e (event)
+
+        */
         private void BtnCancel_Click(object sender, EventArgs e)
         {
+
             if (this.formState == FormState.AddNew)
             {
-                var result = MessageBox.Show("Are you sure you want to cancel?", "Confirm Cancel", MessageBoxButtons.YesNo);
+                var result = MessageBox.Show("Are you sure you want to cancel?", "Confirm Cancel", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
                 {
@@ -64,7 +86,11 @@ namespace ContactManager.NewContactWin
 
         }
 
+        /*
+         displays current contact
 
+        @paramenter: c (Contact)
+        */
         private void LoadContact(Contact c)
         {
 
@@ -91,7 +117,6 @@ namespace ContactManager.NewContactWin
             CmbWorkload.Text = c.Workload ?? "";
             CmbRole.Text = c.Role ?? "";
             CmbMgmtLevel.Text = c.ManagementLevel?.ToString() ?? "";
-            CmbAppYears.SelectedItem = c.ApprenticeshipYears ?? 0;
             NumCurrentAppYear.Value = c.CurrentApprenticeshipYear ?? 0;
             TxtCompanyName.Text = c.CompanyName ?? "";
             TxtBusinessAddress.Text = c.BusinessAddress ?? "";
@@ -100,16 +125,27 @@ namespace ContactManager.NewContactWin
 
         }
 
+        /*
+         changes form state and applies edit mode
+
+        @paramenter: state
+        */
+
         private void SetFormState(FormState state)
         {
             formState = state;
+
             bool isEditable = state == FormState.Edit || state == FormState.AddNew;
+
             ApplyEditMode(isEditable);
         }
 
 
-        // disable text fields - no edit
+        /*
+         loops through all fields of current form and applies if editable state
 
+        @parameter: isEditable
+        */
         private void ApplyEditMode(bool isEditable)
         {
             void Walk(Control parent)
@@ -130,6 +166,7 @@ namespace ContactManager.NewContactWin
                             break;
                     }
 
+                    // applies edit mode also on sub child fields
                     if (child.HasChildren)
                         Walk(child);
                 }
@@ -143,8 +180,16 @@ namespace ContactManager.NewContactWin
             BtnSaveContact.Visible = isEditable;
             BtnCancelContact.Visible = isEditable;
             BtnEditContact.Visible = !isEditable;
+            BtnDeleteContact.Visible = !isEditable;
+            BtnActivities.Visible = !isEditable;
         }
 
+        /*
+         shows history form of current contact
+
+        @parameter: sender
+        @paramenter: e (event)
+         */
         private void BtnViewHistory_Click(object sender, EventArgs e)
         {
             HistoryWin.HistoryWin win = new HistoryWin.HistoryWin(this.current_contact);
@@ -152,11 +197,31 @@ namespace ContactManager.NewContactWin
             win.ShowDialog();
         }
 
+        /*
+         sets form state editable and hides/shows buttons
+
+        @parameter: sender
+        @paramenter: e (event)
+         */
+
         private void BtnEditContact_Click(object sender, EventArgs e)
         {
             SetFormState(FormState.Edit);
+
+            BtnViewHistory.Show();
+            BtnDeleteContact.Hide();
+            BtnSaveContact.Show();
+            BtnCancelContact.Show();
+            BtnActivities.Hide();
         }
 
+
+        /*
+         saves changes of edited or new added contact
+
+        @parameter: sender
+        @paramenter: e (event)
+         */
         private void BtnSaveContact_Click(object sender, EventArgs e)
         {
             try
@@ -187,7 +252,7 @@ namespace ContactManager.NewContactWin
                     Workload = CmbWorkload.Text,
                     Role = CmbRole.Text,
                     ManagementLevel = int.TryParse(CmbMgmtLevel.Text, out int mgmt) ? mgmt : null,
-                    ApprenticeshipYears = CmbAppYears.SelectedItem is int appYears ? appYears : null,
+                    ApprenticeshipYears = (int)NumAppYears.Value,
                     CurrentApprenticeshipYear = (int?)NumCurrentAppYear.Value,
                     CompanyName = TxtCompanyName.Text,
                     BusinessAddress = TxtBusinessAddress.Text,
@@ -195,14 +260,19 @@ namespace ContactManager.NewContactWin
                     CompanyContact = CmbCompanyContact.Text
                 };
 
+                // checks if form state is editable and if currenct contact exists
                 if (formState == FormState.Edit && current_contact != null)
                 {
+
+                    // updates contact
                     updatedContact.EmployeeNumber = current_contact.EmployeeNumber;
                     handler.UpdateContact(updatedContact);
                     MessageBox.Show("Contact updated successfully!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     historyHandler.AddToHistory(new HistoryEvent(AuthService.CurrentUser, FormState.Edit.ToString(), DateTime.Now, current_contact, updatedContact));
                 }
+
+                // adds contact
                 else
                 {
                     handler.AddContact(updatedContact);
@@ -215,24 +285,37 @@ namespace ContactManager.NewContactWin
 
 
             }
+
+            // provides input safety
             catch (Exception ex)
             {
                 MessageBox.Show($"Error saving contact:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        /*
+         deletes current contact with warning message
+
+        @parameter: sender
+        @paramenter: e (event)
+        */
         private void BtnDeleteContact_Click(object sender, EventArgs e)
         {
             contactHandler.DeleteContact(current_contact);
 
-         
-                var result = MessageBox.Show("Are you sure you want to cancel?", "Confirm Cancel", MessageBoxButtons.YesNo);
 
-                if (result == DialogResult.Yes)
-                {
-                    this.Close();
-                }
-          
+            var result = MessageBox.Show($"Are you sure you want to delete: {current_contact.FirstName} {current_contact.LastName}?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+
+        }
+
+        private void BtnActivities_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

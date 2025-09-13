@@ -322,9 +322,7 @@
             // 
             // CmbAppYears
             // 
-            CmbAppYears.Location = new Point(185, 460);
-            CmbAppYears.Margin = new Padding(3, 2, 3, 2);
-            CmbAppYears.Size = new Size(66, 23);
+
             // 
             // CmbRole
             // 
@@ -425,7 +423,6 @@
             Controls.SetChildIndex(CmbCustomerType, 0);
             Controls.SetChildIndex(TxtMailadress, 0);
             Controls.SetChildIndex(CmbMgmtLevel, 0);
-            Controls.SetChildIndex(CmbAppYears, 0);
             Controls.SetChildIndex(CmbRole, 0);
             Controls.SetChildIndex(NumPostalCode, 0);
             Controls.SetChildIndex(BtnEditContact, 0);

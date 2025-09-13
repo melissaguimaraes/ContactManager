@@ -71,7 +71,6 @@ namespace ContactManager.ContactWin
             CmbWorkload.Text = c.Workload ?? "";
             CmbRole.Text = c.Role ?? "";
             CmbMgmtLevel.Text = c.ManagementLevel?.ToString() ?? "";
-            CmbAppYears.SelectedItem = c.ApprenticeshipYears ?? 0;
             NumCurrentAppYear.Value = c.CurrentApprenticeshipYear ?? 0;
             TxtCompanyName.Text = c.CompanyName ?? "";
             TxtBusinessAddress.Text = c.BusinessAddress ?? "";
@@ -110,7 +109,6 @@ namespace ContactManager.ContactWin
             CmbWorkload.Enabled = isEditable;
             CmbRole.Enabled = isEditable;
             CmbMgmtLevel.Enabled = isEditable;
-            CmbAppYears.Enabled = isEditable;
             NumCurrentAppYear.Enabled = isEditable;
             TxtCompanyName.ReadOnly = !isEditable;
             TxtBusinessAddress.ReadOnly = !isEditable;
