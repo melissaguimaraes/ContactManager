@@ -23,6 +23,12 @@ namespace ContactManager
             this.AcceptButton = btnLogin;
         }
 
+        /*
+        Button for getting user credentials and check if correct -> login
+
+        @parameter: sender
+        @parameter: e (event)
+        */
         private void btnLogin_Click(object sender, EventArgs e)
         {
             lblError.Text = "";
@@ -52,6 +58,12 @@ namespace ContactManager
             }
         }
 
+        /*
+        Toggles password visability
+
+        @parameter: sender
+        @parameter: e (event)
+        */
         private void chkShow_CheckedChanged_1(object sender, EventArgs e)
         {
             txtPass.UseSystemPasswordChar = !txtPass.UseSystemPasswordChar;
