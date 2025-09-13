@@ -37,9 +37,8 @@ namespace ContactManager.Models
         public string CompanyName { get; set; }               
         public string BusinessAddress { get; set; }           
         public string CustomerType { get; set; }              
-        public string CompanyContact { get; set; }            
-    
-
-
+        public string CompanyContact { get; set; }   
+        
+        
     }
 }

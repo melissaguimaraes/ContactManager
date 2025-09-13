@@ -93,7 +93,7 @@ namespace ContactManager.MainWin
 
             if (selectedRow == null) return;
 
-            
+
             using (var dlg = new ContactManager.NewContactWin.NewContactWin(selectedRow))
             {
                 dlg.ShowDialog(this);
@@ -103,6 +103,12 @@ namespace ContactManager.MainWin
 
         }
 
+        /*
+        Opens add new contact modal
+
+        @parameter: sender
+        @parameter: e (event)
+        */
         private void BtnAddNewContact_Click(object sender, EventArgs e)
         {
             new NewContactWin.NewContactWin().ShowDialog();
@@ -111,9 +117,15 @@ namespace ContactManager.MainWin
 
         }
 
-        private void gridViewContactList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        /*
+        Logs current user out
 
+        @parameter: sender
+        @parameter: e (event)
+        */
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+            AuthService.Logout(this);
         }
     }
 }

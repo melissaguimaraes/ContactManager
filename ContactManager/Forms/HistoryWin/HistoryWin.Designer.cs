@@ -38,7 +38,6 @@
             listViewHistory.Size = new Size(754, 374);
             listViewHistory.TabIndex = 1;
             listViewHistory.UseCompatibleStateImageBehavior = false;
-            listViewHistory.SelectedIndexChanged += listViewHistory_SelectedIndexChanged;
             // 
             // HistoryWin
             // 

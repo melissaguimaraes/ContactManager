@@ -67,8 +67,5 @@ namespace ContactManager.Helper
             return history;
         }
 
-        
-
-
     }
 }
