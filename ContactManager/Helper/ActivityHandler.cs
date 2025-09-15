@@ -57,8 +57,8 @@ namespace ContactManager.Helper
 
             foreach (ActivityComment comment in AllComments)
             {
-                if (comment.ContactID == contact.
-                    )
+                if (comment.ContactID == contact.PersonalNumber)
+                    
                 {
                     ContactComments.Add(comment);
                 }

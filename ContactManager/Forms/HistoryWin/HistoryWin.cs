@@ -26,8 +26,8 @@ namespace ContactManager.HistoryWin
             listViewHistory.Columns.Add("Afterwards", 0);
             listViewHistory.GridLines = true;
 
-            string employeeNumber = contact.EmployeeNumber;
-            ShowHistory(employeeNumber);
+            string personalNumber = contact.PersonalNumber;
+            ShowHistory(personalNumber);
             AutoResizeColumns();
         }
 
@@ -35,10 +35,10 @@ namespace ContactManager.HistoryWin
         /*
         Displays change history of the current contact in a formated way
         */
-        private void ShowHistory(string employeeNumber)
+        private void ShowHistory(string personalNumber)
         {
             // gets all event for a contact and clears listview
-            var events = GetEventsForContact(employeeNumber);
+            var events = GetEventsForContact(personalNumber);
             listViewHistory.Items.Clear();
 
             foreach (var evt in events)
@@ -68,19 +68,19 @@ namespace ContactManager.HistoryWin
         /*
         Returns Events for a a specific event
 
-        @parameter: employeeNumber
+        @parameter: personalNumber
 
         @return: List<HistoryEvent>
         */
-        public List<HistoryEvent> GetEventsForContact(string employeeNumber)
+        public List<HistoryEvent> GetEventsForContact(string personalNumber)
         {
             var allEvents = HistoryHandler.GetHistoryHandler().GetHistory();
 
             // List comprehhension to filter for events of the specified user
             return allEvents
                 .Where(e =>
-                    (e.BeforeChange?.EmployeeNumber == employeeNumber) ||
-                    (e.AfterChange?.EmployeeNumber == employeeNumber))
+                    (e.BeforeChange?.PersonalNumber == personalNumber) ||
+                    (e.AfterChange?.PersonalNumber == personalNumber))
                 .OrderByDescending(e => e.Timestamp)
                 .ToList();
         }
