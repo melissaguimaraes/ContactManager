@@ -1,1 +1,35 @@
-To be edited...
+Group members: Melissa Guimaraes and Kyra Leucci
+Class: ITB23H-27H
+
+
+Description of what is working:
+-------------------------------
+▪ Erfassung von Mitarbeitern und Kunden
+▪ Mutieren von Mitarbeitern und Kunden
+▪ Aktivieren und deaktivieren von Mitarbeitern und Kunden
+▪ Löschen von Mitarbeitern und Kunden
+▪ Automatische Vergabe von Mitarbeiternummern
+▪ Protokollieren von Notizen in Kundenkontakten inkl. Historie
+▪ Suchmöglichkeiten über gespeicherten Informationen (Name, Vorname, Geburtsdatum, Mitarbeiter/Kunde)
+▪ Automatisches Speichern des Datenstamms auf Festplatte
+
+
+
+Description of what is not working:
+-----------------------------------
+▪ ...
+
+
+
+
+Additional Information
+----------------------
+
+username: admin
+password: admin
+
+username: melissa
+password: melissa
+
+username: kyra
+password: kyraTo be edited...
