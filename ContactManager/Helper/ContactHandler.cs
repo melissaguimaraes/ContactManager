@@ -72,11 +72,11 @@ namespace ContactManager.Helper
             var contacts = LoadContacts();
 
             // gets last element of ordered json file and gets current max id/number
-            int maxNumber = int.Parse(contacts[contacts.Count - 1].EmployeeNumber);
+            int maxNumber = int.Parse(contacts[contacts.Count - 1].PersonalNumber);
 
             // Creates new contact with (current max number) + 1 
             // leading digits with zeros
-            newContact.EmployeeNumber = (maxNumber + 1).ToString("D4");
+            newContact.PersonalNumber = (maxNumber + 1).ToString("D4");
 
             // add new contact to current list
             contacts.Add(newContact);
@@ -96,7 +96,7 @@ namespace ContactManager.Helper
             var contacts = LoadContacts();
 
             // gets position of the contact which will be updated
-            var index = contacts.FindIndex(c => c.EmployeeNumber == updatedContact.EmployeeNumber);
+            var index = contacts.FindIndex(c => c.PersonalNumber == updatedContact.PersonalNumber);
 
             // throws exception if employe is not in list
             if (index == -1)
@@ -122,7 +122,7 @@ namespace ContactManager.Helper
             for (int i = 0; i < contacts.Count; i++)
             {
                 // removes contact at the found postion
-                if (deleteContact.EmployeeNumber == contacts[i].EmployeeNumber)
+                if (deleteContact.PersonalNumber == contacts[i].PersonalNumber)
                 {
                     contacts.RemoveAt(i);
                 }

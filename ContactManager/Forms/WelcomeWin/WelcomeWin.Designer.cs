@@ -40,51 +40,53 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            lblTitle.Location = new Point(273, 29);
+            lblTitle.Location = new Point(312, 39);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(239, 37);
+            lblTitle.Size = new Size(295, 46);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Contact Manager";
             // 
             // lblUserNameTitle
             // 
             lblUserNameTitle.AutoSize = true;
-            lblUserNameTitle.Location = new Point(41, 226);
+            lblUserNameTitle.Location = new Point(47, 301);
             lblUserNameTitle.Name = "lblUserNameTitle";
-            lblUserNameTitle.Size = new Size(63, 15);
+            lblUserNameTitle.Size = new Size(79, 20);
             lblUserNameTitle.TabIndex = 1;
             lblUserNameTitle.Text = "User name";
             // 
             // txtUser
             // 
-            txtUser.Location = new Point(41, 244);
+            txtUser.Location = new Point(47, 325);
+            txtUser.Margin = new Padding(3, 4, 3, 4);
             txtUser.Name = "txtUser";
-            txtUser.Size = new Size(100, 23);
+            txtUser.Size = new Size(114, 27);
             txtUser.TabIndex = 2;
             // 
             // lblPassTitle
             // 
             lblPassTitle.AutoSize = true;
-            lblPassTitle.Location = new Point(41, 290);
+            lblPassTitle.Location = new Point(47, 387);
             lblPassTitle.Name = "lblPassTitle";
-            lblPassTitle.Size = new Size(57, 15);
+            lblPassTitle.Size = new Size(70, 20);
             lblPassTitle.TabIndex = 3;
             lblPassTitle.Text = "Password";
             // 
             // txtPass
             // 
-            txtPass.Location = new Point(41, 308);
+            txtPass.Location = new Point(47, 411);
+            txtPass.Margin = new Padding(3, 4, 3, 4);
             txtPass.Name = "txtPass";
-            txtPass.Size = new Size(100, 23);
+            txtPass.Size = new Size(114, 27);
             txtPass.TabIndex = 4;
-            
             // 
             // chkShow
             // 
             chkShow.AutoSize = true;
-            chkShow.Location = new Point(147, 312);
+            chkShow.Location = new Point(168, 416);
+            chkShow.Margin = new Padding(3, 4, 3, 4);
             chkShow.Name = "chkShow";
-            chkShow.Size = new Size(108, 19);
+            chkShow.Size = new Size(134, 24);
             chkShow.TabIndex = 5;
             chkShow.Text = "Show password";
             chkShow.UseVisualStyleBackColor = true;
@@ -92,9 +94,10 @@
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(41, 372);
+            btnLogin.Location = new Point(47, 496);
+            btnLogin.Margin = new Padding(3, 4, 3, 4);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(75, 23);
+            btnLogin.Size = new Size(86, 31);
             btnLogin.TabIndex = 6;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
@@ -104,16 +107,17 @@
             // 
             lblError.AutoSize = true;
             lblError.ForeColor = Color.Red;
-            lblError.Location = new Point(252, 378);
+            lblError.Location = new Point(288, 504);
             lblError.Name = "lblError";
-            lblError.Size = new Size(0, 15);
+            lblError.Size = new Size(0, 20);
             lblError.TabIndex = 7;
             // 
             // WelcomeWin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(914, 600);
             Controls.Add(lblError);
             Controls.Add(btnLogin);
             Controls.Add(chkShow);
@@ -122,9 +126,9 @@
             Controls.Add(txtUser);
             Controls.Add(lblUserNameTitle);
             Controls.Add(lblTitle);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "WelcomeWin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
         }

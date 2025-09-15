@@ -9,13 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Data\contacts.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Compile Remove="Shared\**" />
+    <EmbeddedResource Remove="Shared\**" />
+    <None Remove="Shared\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Shared\" />
+    <Content Include="Data\contacts.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

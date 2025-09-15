@@ -5,7 +5,7 @@
     "Timestamp": "2023-01-15T09:00:00",
     "BeforeChange": null,
     "AfterChange": {
-      "EmployeeNumber": "0001",
+      " ": "0001",
       "Salutation": "Ms.",
       "FirstName": "Anna",
       "LastName": "Müller",
@@ -41,12 +41,12 @@
     "ActionName": "Kontakt aktualisiert",
     "Timestamp": "2024-06-20T14:30:00",
     "BeforeChange": {
-      "EmployeeNumber": "0001",
+      "PersonalNumber": "0001",
       "EmailAddress": "anna.mueller@example.com",
       "Workload": "100%"
     },
     "AfterChange": {
-      "EmployeeNumber": "0001",
+      "PersonalNumber": "0001",
       "EmailAddress": "anna.m@example.com",
       "Workload": "80%"
     }

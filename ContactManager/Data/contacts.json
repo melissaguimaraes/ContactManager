@@ -1,6 +1,7 @@
 [
   {
-    "EmployeeNumber": "0001",
+    " ": "
+    0001",
     "Salutation": "Ms.",
     "FirstName": "Anna",
     "LastName": "Müller",
@@ -31,7 +32,7 @@
     "CompanyContact": "Hans Meier"
   },
   {
-    "EmployeeNumber": "0002",
+    "PersonalNumber": "0002",
     "Salutation": "Mr.",
     "FirstName": "Mark",
     "LastName": "Keller",
@@ -62,7 +63,7 @@
     "CompanyContact": "Anna Müller"
   },
   {
-    "EmployeeNumber": "0003",
+    "PersonalNumber": "0003",
     "Salutation": "Ms.",
     "FirstName": "Sophie",
     "LastName": "Dubois",
@@ -93,7 +94,7 @@
     "CompanyContact": "Mark Keller"
   },
   {
-    "EmployeeNumber": "0005",
+    "PersonalNumber": "0005",
     "Salutation": "Mr.",
     "FirstName": "Hans",
     "LastName": "Meier",
@@ -124,7 +125,7 @@
     "CompanyContact": "Anna Müller"
   },
   {
-    "EmployeeNumber": "0006",
+    "PersonalNumber": "0006",
     "Salutation": "Ms.",
     "FirstName": "Maria",
     "LastName": "Lopez",
@@ -155,7 +156,7 @@
     "CompanyContact": "Mark Keller"
   },
   {
-    "EmployeeNumber": "0007",
+    "PersonalNumber": "0007",
     "Salutation": "Mr.",
     "FirstName": "David",
     "LastName": "Nguyen",
@@ -186,7 +187,7 @@
     "CompanyContact": "Hans Meier"
   },
   {
-    "EmployeeNumber": "0008",
+    "PersonalNumber": "0008",
     "Salutation": "Ms.",
     "FirstName": "Laura",
     "LastName": "Schneider",
@@ -217,7 +218,7 @@
     "CompanyContact": "Sophie Dubois"
   },
   {
-    "EmployeeNumber": "0009",
+    "PersonalNumber": "0009",
     "Salutation": "Mr.",
     "FirstName": "Peter",
     "LastName": "Steiner",
@@ -248,7 +249,7 @@
     "CompanyContact": "Anna Müller"
   },
   {
-    "EmployeeNumber": "0010",
+    "PersonalNumber": "0010",
     "Salutation": "Ms.",
     "FirstName": "Nina",
     "LastName": "Weber",
@@ -279,7 +280,7 @@
     "CompanyContact": "Hans Meier"
   },
   {
-    "EmployeeNumber": "0011",
+    "PersonalNumber": "0011",
     "Salutation": "Ms.",
     "FirstName": "Alisson",
     "LastName": "Smith",
@@ -310,7 +311,7 @@
     "CompanyContact": "David Nguyen"
   },
   {
-    "EmployeeNumber": "0012",
+    "PersonalNumber": "0012",
     "Salutation": "Ms.",
     "FirstName": "Julia",
     "LastName": "Fischer",

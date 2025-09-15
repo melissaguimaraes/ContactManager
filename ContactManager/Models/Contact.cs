@@ -9,7 +9,7 @@ namespace ContactManager.Models
     public class Contact
     {
 
-        public string EmployeeNumber { get; set; }
+        public string PersonalNumber { get; set; }
         public string Salutation { get; set; }                
         public string FirstName { get; set; }                 
         public string LastName { get; set; }                  

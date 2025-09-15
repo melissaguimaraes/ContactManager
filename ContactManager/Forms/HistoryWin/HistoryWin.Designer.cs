@@ -33,21 +33,23 @@
             // 
             // listViewHistory
             // 
-            listViewHistory.Location = new Point(12, 37);
+            listViewHistory.Location = new Point(14, 49);
+            listViewHistory.Margin = new Padding(3, 4, 3, 4);
             listViewHistory.Name = "listViewHistory";
-            listViewHistory.Size = new Size(754, 374);
+            listViewHistory.Size = new Size(861, 497);
             listViewHistory.TabIndex = 1;
             listViewHistory.UseCompatibleStateImageBehavior = false;
             // 
             // HistoryWin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(listViewHistory);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "HistoryWin";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "Form1";
+            Text = "Contact History";
             ResumeLayout(false);
         }
 

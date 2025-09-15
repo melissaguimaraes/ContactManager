@@ -96,7 +96,7 @@ namespace ContactManager.NewContactWin
         private void LoadContact(Contact c)
         {
 
-            TxtEmployeeNo.Text = c.EmployeeNumber ?? "";
+            TxtEmployeeNo.Text = c.PersonalNumber ?? "";
             CmbSalutation.Text = c.Salutation ?? "";
             TxtFirstname.Text = c.FirstName ?? "";
             TxtLastname.Text = c.LastName ?? "";
@@ -267,7 +267,7 @@ namespace ContactManager.NewContactWin
                 {
 
                     // updates contact
-                    updatedContact.EmployeeNumber = current_contact.EmployeeNumber;
+                    updatedContact.PersonalNumber = current_contact.PersonalNumber;
                     handler.UpdateContact(updatedContact);
                     MessageBox.Show("Contact updated successfully!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

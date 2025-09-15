@@ -37,7 +37,7 @@ namespace ContactManager.Forms.ActivityWin
          */
         private void BtnSaveCmnt_Click(object sender, EventArgs e)
         {
-            ActivityComment NewComment = new ActivityComment(TxtCmntField.Text.Trim(), AuthService.CurrentUser, DateTime.Now, CurrentContact.EmployeeNumber);
+            ActivityComment NewComment = new ActivityComment(TxtCmntField.Text.Trim(), AuthService.CurrentUser, DateTime.Now, CurrentContact.PersonalNumber);
 
             // checks if comment has been typed
             if (TxtCmntField.Text != null && TxtCmntField.Text != "")
