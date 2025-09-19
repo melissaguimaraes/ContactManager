@@ -14,11 +14,11 @@ namespace ContactManager.Forms.ActivityWin
 {
     public partial class ActivityWin : Form
     {
-        private Contact CurrentContact;
+        private Person CurrentContact;
 
         // get singleton instance of activityHandler
         private ActivityHandler activityHandler = ActivityHandler.GetActivityHandler();
-        public ActivityWin(Contact contact)
+        public ActivityWin(Person contact)
         {
 
             InitializeComponent();

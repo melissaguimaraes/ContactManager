@@ -15,7 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Data\contacts.json">
+    <Compile Include="Data\employees.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\clients.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

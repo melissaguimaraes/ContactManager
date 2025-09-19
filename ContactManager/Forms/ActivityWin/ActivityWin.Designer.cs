@@ -80,7 +80,7 @@
             // 
             // contactBindingSource
             // 
-            contactBindingSource.DataSource = typeof(Models.Contact);
+            contactBindingSource.DataSource = typeof(Models.Person);
             // 
             // activityCommentBindingSource3
             // 

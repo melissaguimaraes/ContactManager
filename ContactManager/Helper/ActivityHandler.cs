@@ -50,7 +50,7 @@ namespace ContactManager.Helper
         @parameter: contact
         @return: ContactComments (sorted)
          */
-        public List<ActivityComment> GetActivityComments(Contact contact)
+        public List<ActivityComment> GetActivityComments(Person contact)
         {
             List<ActivityComment> ContactComments = new List<ActivityComment>();
             List<ActivityComment> AllComments = GetActivityComments();

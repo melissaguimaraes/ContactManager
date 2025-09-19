@@ -1,4 +1,6 @@
-﻿using ContactManager.Helper;
+﻿using ContactManager.Forms.ActivityWin;
+using ContactManager.Helper;
+using ContactManager.HelperRB;
 using ContactManager.Models;
 using System;
 using System.Collections.Generic;
@@ -10,7 +12,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ContactManager.Forms.ActivityWin;
+
+
 
 namespace ContactManager.NewContactWin
 {
@@ -18,13 +21,24 @@ namespace ContactManager.NewContactWin
     {
 
         private FormState formState;
-        private Contact current_contact;
+        private Person current_contact;
         private HistoryHandler historyHandler = HistoryHandler.GetHistoryHandler();
         private ContactHandler contactHandler = ContactHandler.GetContactHandler();
+        //should grab RadioButtonHandler
+        //private readonly RadioButtonHandler _radioButtonHandler;
+        private readonly ContactKind _kind;
 
+        // ctor 1
         public NewContactWin()
         {
             InitializeComponent();
+        }
+
+        // ctor 2
+        public NewContactWin(ContactKind kind) : this()
+        {
+            
+            _kind = kind;
             this.Text = "Add New Contact";
             SetFormState(FormState.AddNew);
 
@@ -34,24 +48,41 @@ namespace ContactManager.NewContactWin
             BtnSaveContact.Show();
             BtnCancelContact.Show();
             BtnActivities.Hide();
+
+
+            ShowGroupsForKind(_kind);
+            RbCustomer.CheckedChanged += RadioButtonHandler.OnRBCheckedChanged;
+            RbEmployee.CheckedChanged += RadioButtonHandler.OnRBCheckedChanged;
+
+            RbEmployee.Checked = true;
         }
 
+        // here depending on radioButton selected the groups will be visible or not
+        private void ShowGroupsForKind(ContactKind kind)
+        {
+            employeeGroup.Visible = (kind == ContactKind.Employee || kind == ContactKind.Trainee);
+            traineeGroup.Visible = (kind == ContactKind.Trainee);
+            customerGroup.Visible = (kind == ContactKind.Customer);
+        }
         /*
          View mode constructor
 
         @paramenter: contToDisplay
             
         */
-
-        public NewContactWin(Contact contToDisplay)
+        //ctor 3
+        public NewContactWin(Person contToDisplay)
         {
             InitializeComponent();
 
-            Contact contact = contToDisplay ?? throw new ArgumentNullException(nameof(contToDisplay));
+            current_contact = contToDisplay ?? throw new ArgumentNullException(nameof(contToDisplay));
+            LoadContact(current_contact);
 
-            this.current_contact = contact;
+            _kind = current_contact is Trainee ? ContactKind.Trainee 
+                   : current_contact is Employee ? ContactKind.Employee
+                   : ContactKind.Customer;
 
-            LoadContact(contact);
+            ShowGroupsForKind(_kind);
 
             // set button and form state
             SetFormState(FormState.View);
@@ -68,6 +99,8 @@ namespace ContactManager.NewContactWin
         @paramenter: e (event)
 
         */
+               
+
         private void BtnCancel_Click(object sender, EventArgs e)
         {
 
@@ -93,7 +126,7 @@ namespace ContactManager.NewContactWin
 
         @paramenter: c (Contact)
         */
-        private void LoadContact(Contact c)
+        private void LoadContact(Person c)
         {
 
             TxtEmployeeNo.Text = c.PersonalNumber ?? "";
@@ -106,25 +139,48 @@ namespace ContactManager.NewContactWin
             TxtBusinessPhone.Text = c.BusinessPhone ?? "";
             TxtMobilePhone.Text = c.MobilePhone ?? "";
             TxtMailadress.Text = c.EmailAddress ?? "";
-            CmbStatus.Text = c.Status ?? "";
-            CmbDepartment.Text = c.Department ?? "";
+            CmbStatus.Text = c.Status ?? "";           
             TxtAHV.Text = c.AhvNumber ?? "";
             TextCity.Text = c.City ?? "";
             CmbNationality.Text = c.Nationality ?? "";
             TxtStreet.Text = c.Street ?? "";
             NumPostalCode.Text = c.PostalCode?.ToString() ?? "";
             TxtPrivatePhone.Text = c.PrivatePhone ?? "";
-            dateTimePickerEntryDate.Text = c.EntryDate?.ToString() ?? "";
-            dateTimePickerExitDate.Text = c.ExitDate?.ToString() ?? "";
-            CmbWorkload.Text = c.Workload ?? "";
-            CmbRole.Text = c.Role ?? "";
-            CmbMgmtLevel.Text = c.ManagementLevel?.ToString() ?? "";
-            NumCurrentAppYear.Value = c.CurrentApprenticeshipYear ?? 0;
-            TxtCompanyName.Text = c.CompanyName ?? "";
-            TxtBusinessAddress.Text = c.BusinessAddress ?? "";
-            CmbCustomerType.Text = c.CustomerType ?? "";
-            CmbCompanyContact.Text = c.CompanyContact ?? "";
 
+
+            // show/hide groups depending on person type 
+
+            customerGroup.Visible = c is Customer;
+            employeeGroup.Visible = c is Employee;
+            traineeGroup.Visible = c is Trainee;
+
+            
+            if (c is Customer cust)
+            {
+                TxtCompanyName.Text = cust.CompanyName ?? "";
+                CmbCustomerType.Text = cust.CustomerType ?? "";
+                CmbCompanyContact.Text = cust.CompanyContact ?? "";
+                TxtBusinessAddress.Text = cust.BusinessAddress ?? "";
+            }
+
+            if ( c is Employee emp)
+            {
+                CmbDepartment.Text = emp.Department ?? "";
+                dateTimePickerEntryDate.Text = emp.EntryDate?.ToString() ?? "";
+                dateTimePickerExitDate.Text = emp.ExitDate?.ToString() ?? "";
+                CmbWorkload.Text = emp.Workload ?? "";
+                CmbRole.Text = emp.Role ?? "";
+                CmbMgmtLevel.Text = emp.ManagementLevel?.ToString() ?? "";
+                
+            }
+            
+            if (c is Trainee trai)
+            {
+                NumAppYears.Value = trai.ApprenticeshipYears ?? 0;
+                NumCurrentAppYear.Value = trai.CurrentApprenticeshipYear ?? 0;
+            }
+                
+            
         }
 
         /*
@@ -224,13 +280,15 @@ namespace ContactManager.NewContactWin
         @parameter: sender
         @paramenter: e (event)
          */
+
+        // as to be similar to method LoadContact on line 126 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         private void BtnSaveContact_Click(object sender, EventArgs e)
         {
             try
             {
                 var handler = ContactHandler.GetContactHandler();
 
-                var updatedContact = new Contact
+                var updatedContact = new Person
                 {
                     Salutation = CmbSalutation.Text,
                     FirstName = TxtFirstname.Text,
@@ -242,24 +300,24 @@ namespace ContactManager.NewContactWin
                     MobilePhone = TxtMobilePhone.Text,
                     EmailAddress = TxtMailadress.Text,
                     Status = CmbStatus.Text,
-                    Department = CmbDepartment.Text,
+                    //Department = CmbDepartment.Text,
                     AhvNumber = TxtAHV.Text,
                     City = TextCity.Text,
                     Nationality = CmbNationality.Text,
                     Street = TxtStreet.Text,
                     PostalCode = NumPostalCode.Text,
                     PrivatePhone = TxtPrivatePhone.Text,
-                    EntryDate = DateOnly.FromDateTime(dateTimePickerEntryDate.Value),
-                    ExitDate = string.IsNullOrWhiteSpace(dateTimePickerExitDate.Text) ? null : DateOnly.FromDateTime(dateTimePickerExitDate.Value),
-                    Workload = CmbWorkload.Text,
-                    Role = CmbRole.Text,
-                    ManagementLevel = int.TryParse(CmbMgmtLevel.Text, out int mgmt) ? mgmt : null,
-                    ApprenticeshipYears = (int)NumAppYears.Value,
-                    CurrentApprenticeshipYear = (int?)NumCurrentAppYear.Value,
-                    CompanyName = TxtCompanyName.Text,
-                    BusinessAddress = TxtBusinessAddress.Text,
-                    CustomerType = CmbCustomerType.Text,
-                    CompanyContact = CmbCompanyContact.Text
+                    //EntryDate = DateOnly.FromDateTime(dateTimePickerEntryDate.Value),
+                    //ExitDate = string.IsNullOrWhiteSpace(dateTimePickerExitDate.Text) ? null : DateOnly.FromDateTime(dateTimePickerExitDate.Value),
+                    //Workload = CmbWorkload.Text,
+                    //Role = CmbRole.Text,
+                    //ManagementLevel = int.TryParse(CmbMgmtLevel.Text, out int mgmt) ? mgmt : null,
+                    //ApprenticeshipYears = (int)NumAppYears.Value,
+                    //CurrentApprenticeshipYear = (int?)NumCurrentAppYear.Value,
+                    //CompanyName = TxtCompanyName.Text,
+                    //BusinessAddress = TxtBusinessAddress.Text,
+                    //CustomerType = CmbCustomerType.Text,
+                    //CompanyContact = CmbCompanyContact.Text
                 };
 
                 // checks if form state is editable and if currenct contact exists

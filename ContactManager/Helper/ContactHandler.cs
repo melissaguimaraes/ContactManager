@@ -1,4 +1,5 @@
-﻿using ContactManager.Models;
+﻿using ContactManager.HelperRB;
+using ContactManager.Models;
 using System;
 using System.Collections.Generic;
 using System.Drawing.Imaging;
@@ -14,12 +15,12 @@ namespace ContactManager.Helper
     {
         private static ContactHandler _contactHandler = new ContactHandler();
         // local path to contacts.json
-        private static string contact_path = "Data/contacts.json";
+        private static string GetCurrentPath() => RadioButtonHandler.CurrentDataPath();
 
         private ContactHandler() { }
 
         /*
-        retunrns singelton inctance of ContactHandler Object
+        retunrns singelton instance of ContactHandler Object
 
         @return: _contactHandler
         */
@@ -33,17 +34,18 @@ namespace ContactManager.Helper
 
         @return: Lists<Contact>
         */
-        public List<Contact> LoadContacts()
+        public List<Person> LoadContacts()
         {
-            if (!File.Exists(contact_path))
-                return new List<Contact>();
+            var path = GetCurrentPath();
+            if (!File.Exists(path))
+                return new List<Person>();
 
-            string json = File.ReadAllText(contact_path);
+            string json = File.ReadAllText(path);
             
             // json serialize options for converting DateTime in specific date format (yyyy-MM-dd)
             var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true, Converters = { new DateOnlyJsonConverter() } };
 
-            return JsonSerializer.Deserialize<List<Contact>>(json, options) ?? new List<Contact>();
+            return JsonSerializer.Deserialize<List<Person>>(json, options) ?? new List<Person>();
         }
 
         /*
@@ -51,14 +53,15 @@ namespace ContactManager.Helper
 
         @parameter: contacts
         */
-        public void SaveContacts(List<Contact> contacts)
+        public void SaveContacts(List<Person> contacts)
         {
             // options for JSON Identation
+            var path = GetCurrentPath();
             var options = new JsonSerializerOptions{ WriteIndented = true,Converters = { new DateOnlyJsonConverter() }};
 
             string json = JsonSerializer.Serialize(contacts, options);
 
-            File.WriteAllText(contact_path, json);
+            File.WriteAllText(path, json);
         }
         
         /*
@@ -67,21 +70,37 @@ namespace ContactManager.Helper
         @parameter: newContact
         @return: void
         */
-        public void AddContact(Contact newContact)
+        public void AddContact(Person newContact)
         {
             var contacts = LoadContacts();
 
             // gets last element of ordered json file and gets current max id/number
-            int maxNumber = int.Parse(contacts[contacts.Count - 1].PersonalNumber);
+            int maxNumber = 0; //int.Parse(contacts[contacts.Count - 1].PersonalNumber);
 
             // Creates new contact with (current max number) + 1 
             // leading digits with zeros
-            newContact.PersonalNumber = (maxNumber + 1).ToString("D4");
+            //newContact.PersonalNumber = (maxNumber + 1).ToString("D4");
 
             // add new contact to current list
-            contacts.Add(newContact);
+            //contacts.Add(newContact);
 
+            //SaveContacts(contacts);
+            foreach (var p in contacts)
+            {
+                var id = p.PersonalNumber ?? "";
+                var digits = new string(id.Where(char.IsDigit).ToArray());
+                if (int.TryParse(digits, out int n) && n > maxNumber)
+                    maxNumber = n;
+            }
+
+            var path = GetCurrentPath();
+            string prefix = path.IndexOf("client", StringComparison.OrdinalIgnoreCase) >= 0 ? "C-" : "E-";
+
+            newContact.PersonalNumber = prefix + (maxNumber + 1).ToString("D4");
+
+            contacts.Add(newContact);
             SaveContacts(contacts);
+
         }
 
         /*
@@ -90,7 +109,7 @@ namespace ContactManager.Helper
         @parameter: updatedContact
         @return: void
         */
-        public void UpdateContact(Contact updatedContact)
+        public void UpdateContact(Person updatedContact)
         {
 
             var contacts = LoadContacts();
@@ -114,9 +133,9 @@ namespace ContactManager.Helper
         @parameter: deletesContact
         @return: void
         */
-        public void DeleteContact(Contact deleteContact)
+        public void DeleteContact(Person deleteContact)
         {
-            List<Contact> contacts = LoadContacts();
+            List<Person> contacts = LoadContacts();
 
             // search algo to find contact in imported list
             for (int i = 0; i < contacts.Count; i++)

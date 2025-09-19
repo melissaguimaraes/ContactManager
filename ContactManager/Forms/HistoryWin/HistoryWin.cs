@@ -15,7 +15,7 @@ namespace ContactManager.HistoryWin
 {
     public partial class HistoryWin : Form
     {
-        public HistoryWin(Contact contact)
+        public HistoryWin(Person contact)
         {
             InitializeComponent();
 
@@ -93,13 +93,13 @@ namespace ContactManager.HistoryWin
 
         @return: changes (List of tuples)
         */
-        public static List<(string Field, string OldValue, string NewValue)> GetChanges(Contact before, Contact after)
+        public static List<(string Field, string OldValue, string NewValue)> GetChanges(Person before, Person after)
         {
             var changes = new List<(string, string, string)>();
 
             if (before == null || after == null) return changes;
 
-            var props = typeof(Contact).GetProperties();
+            var props = typeof(Person).GetProperties();
 
             // generates tuples of changes attributes
             foreach (var prop in props)

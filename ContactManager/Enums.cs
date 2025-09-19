@@ -12,4 +12,11 @@ namespace ContactManager
         Edit,
         AddNew
     }
+
+    public enum ContactKind 
+    { 
+        Employee, 
+        Customer, 
+        Trainee 
+    }
 }
