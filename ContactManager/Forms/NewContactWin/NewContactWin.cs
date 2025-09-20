@@ -125,6 +125,16 @@ namespace ContactManager.NewContactWin
             CmbCustomerType.Text = c.CustomerType ?? "";
             CmbCompanyContact.Text = c.CompanyContact ?? "";
 
+            if (c.Status == "active")
+            {
+                btnActivate.Text = "Deactivate";
+            }
+            else
+            {
+                btnActivate.Text = "Activate";
+            }
+
+
         }
 
         /*
@@ -278,7 +288,7 @@ namespace ContactManager.NewContactWin
                 else
                 {
                     handler.AddContact(updatedContact);
-                    MessageBox.Show("Contact added successfully!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Contact added/updated successfully!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     historyHandler.AddToHistory(new HistoryEvent(AuthService.CurrentUser, FormState.AddNew.ToString(), DateTime.Now, current_contact, null));
                 }
@@ -326,6 +336,50 @@ namespace ContactManager.NewContactWin
             ActivityWin activityWin = new ActivityWin(this.current_contact);
 
             activityWin.ShowDialog();
+        }
+
+        private void btnActivate_Click(object sender, EventArgs e)
+        {           
+            
+
+            if (current_contact.Status == "active")
+            {
+                current_contact.Status = "deactive";
+            }
+            else
+            {
+                current_contact.Status = "active";
+            }
+
+            btnActivate.Text = $"{(current_contact.Status == "active" ? "deactive" : "active")}";
+
+            //changing the state showed in dropdown menu
+            CmbStatus.Text = $"{current_contact.Status}";
+
+
+            // updating contact automatically once button is clicked
+            try
+            {
+                var handler = ContactHandler.GetContactHandler();
+                handler.UpdateContact(current_contact);
+
+                MessageBox.Show($"Status updated to {current_contact.Status}",
+                    "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+               
+                historyHandler.AddToHistory(
+                    new HistoryEvent(AuthService.CurrentUser,
+                                     "StatusChanged",
+                                     DateTime.Now,                                        
+                                     current_contact,
+                                     null));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating status:\n{ex.Message}",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

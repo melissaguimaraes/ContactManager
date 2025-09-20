@@ -101,6 +101,8 @@ namespace ContactManager.MainWin
 
             ShowContactButton_Click(this, EventArgs.Empty);
 
+           
+
         }
 
         /*
