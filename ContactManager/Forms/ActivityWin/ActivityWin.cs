@@ -14,11 +14,11 @@ namespace ContactManager.Forms.ActivityWin
 {
     public partial class ActivityWin : Form
     {
-        private Contact CurrentContact;
+        private Person CurrentContact;
 
         // get singleton instance of activityHandler
         private ActivityHandler activityHandler = ActivityHandler.GetActivityHandler();
-        public ActivityWin(Contact contact)
+        public ActivityWin(Person contact)
         {
 
             InitializeComponent();
@@ -30,19 +30,18 @@ namespace ContactManager.Forms.ActivityWin
         }
 
         /*
-         saves comment 
+        saves comment 
 
         @parameter: sender
         @parameter: e (event)
          */
         private void BtnSaveCmnt_Click(object sender, EventArgs e)
         {
-            ActivityComment NewComment = new ActivityComment(TxtCmntField.Text.Trim(), AuthService.CurrentUser, DateTime.Now, CurrentContact.PersonalNumber);
+            ActivityComment NewComment = new ActivityComment(TxtCmntField.Text.Trim(), AuthService.CurrentUser.Username, DateTime.Now, CurrentContact.PersonalNumber);
 
             // checks if comment has been typed
             if (TxtCmntField.Text != null && TxtCmntField.Text != "")
             {
-
 
                 activityHandler.SaveActivity(NewComment);
 

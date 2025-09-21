@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActivityWin));
             TxtCmntField = new TextBox();
             BtnSaveCmnt = new Button();
             activityCommentBindingSource = new BindingSource(components);
@@ -50,17 +51,20 @@
             // 
             // TxtCmntField
             // 
-            TxtCmntField.Location = new Point(33, 21);
+            TxtCmntField.BorderStyle = BorderStyle.FixedSingle;
+            TxtCmntField.Location = new Point(47, 35);
+            TxtCmntField.Margin = new Padding(4, 5, 4, 5);
             TxtCmntField.Multiline = true;
             TxtCmntField.Name = "TxtCmntField";
-            TxtCmntField.Size = new Size(736, 126);
+            TxtCmntField.Size = new Size(1050, 207);
             TxtCmntField.TabIndex = 0;
             // 
             // BtnSaveCmnt
             // 
-            BtnSaveCmnt.Location = new Point(694, 162);
+            BtnSaveCmnt.Location = new Point(991, 270);
+            BtnSaveCmnt.Margin = new Padding(4, 5, 4, 5);
             BtnSaveCmnt.Name = "BtnSaveCmnt";
-            BtnSaveCmnt.Size = new Size(75, 23);
+            BtnSaveCmnt.Size = new Size(107, 38);
             BtnSaveCmnt.TabIndex = 1;
             BtnSaveCmnt.Text = "Save";
             BtnSaveCmnt.UseVisualStyleBackColor = true;
@@ -80,7 +84,7 @@
             // 
             // contactBindingSource
             // 
-            contactBindingSource.DataSource = typeof(Models.Contact);
+            contactBindingSource.DataSource = typeof(Models.Person);
             // 
             // activityCommentBindingSource3
             // 
@@ -94,23 +98,28 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { timestampDataGridViewTextBoxColumn, commentorDataGridViewTextBoxColumn, commentDataGridViewTextBoxColumn });
             dataGridView1.DataSource = activityCommentBindingSource;
-            dataGridView1.Location = new Point(33, 201);
+            dataGridView1.Location = new Point(47, 335);
+            dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(736, 237);
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(1051, 395);
             dataGridView1.TabIndex = 2;
             // 
             // timestampDataGridViewTextBoxColumn
             // 
             timestampDataGridViewTextBoxColumn.DataPropertyName = "Timestamp";
             timestampDataGridViewTextBoxColumn.HeaderText = "Timestamp";
+            timestampDataGridViewTextBoxColumn.MinimumWidth = 8;
             timestampDataGridViewTextBoxColumn.Name = "timestampDataGridViewTextBoxColumn";
             timestampDataGridViewTextBoxColumn.ReadOnly = true;
+            timestampDataGridViewTextBoxColumn.Width = 150;
             // 
             // commentorDataGridViewTextBoxColumn
             // 
             commentorDataGridViewTextBoxColumn.DataPropertyName = "Commentor";
             commentorDataGridViewTextBoxColumn.HeaderText = "Commentor";
+            commentorDataGridViewTextBoxColumn.MinimumWidth = 8;
             commentorDataGridViewTextBoxColumn.Name = "commentorDataGridViewTextBoxColumn";
             commentorDataGridViewTextBoxColumn.ReadOnly = true;
             commentorDataGridViewTextBoxColumn.Width = 200;
@@ -119,18 +128,23 @@
             // 
             commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
             commentDataGridViewTextBoxColumn.HeaderText = "Comment";
+            commentDataGridViewTextBoxColumn.MinimumWidth = 8;
             commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
             commentDataGridViewTextBoxColumn.ReadOnly = true;
-            commentDataGridViewTextBoxColumn.Width = 393;
+            commentDataGridViewTextBoxColumn.Width = 637;
             // 
             // ActivityWin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1143, 750);
             Controls.Add(dataGridView1);
             Controls.Add(BtnSaveCmnt);
             Controls.Add(TxtCmntField);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 5, 4, 5);
+            MaximizeBox = false;
             Name = "ActivityWin";
             StartPosition = FormStartPosition.CenterParent;
             Text = "ActivityWin";

@@ -13,12 +13,15 @@ using System.Windows.Forms;
 
 namespace ContactManager.HistoryWin
 {
+    // Form te view history of changed attributes of object
     public partial class HistoryWin : Form
     {
-        public HistoryWin(Contact contact)
+        private HistoryHandler historyHandler = HistoryHandler.GetHistoryHandler();
+        public HistoryWin(Person contact)
         {
             InitializeComponent();
 
+            // set columns of listview and other settings
             listViewHistory.View = View.Details;
             listViewHistory.Columns.Clear();
             listViewHistory.Columns.Add("Field", 0);
@@ -26,19 +29,20 @@ namespace ContactManager.HistoryWin
             listViewHistory.Columns.Add("Afterwards", 0);
             listViewHistory.GridLines = true;
 
-            string personalNumber = contact.PersonalNumber;
-            ShowHistory(personalNumber);
+            ShowHistory(contact);
+
             AutoResizeColumns();
         }
 
-
         /*
         Displays change history of the current contact in a formated way
+
+        @parameter: person
         */
-        private void ShowHistory(string personalNumber)
+        private void ShowHistory(Person person)
         {
             // gets all event for a contact and clears listview
-            var events = GetEventsForContact(personalNumber);
+            List<HistoryEvent> events = historyHandler.GetEventsForContact(person);
             listViewHistory.Items.Clear();
 
             foreach (var evt in events)
@@ -66,26 +70,6 @@ namespace ContactManager.HistoryWin
         }
 
         /*
-        Returns Events for a a specific event
-
-        @parameter: personalNumber
-
-        @return: List<HistoryEvent>
-        */
-        public List<HistoryEvent> GetEventsForContact(string personalNumber)
-        {
-            var allEvents = HistoryHandler.GetHistoryHandler().GetHistory();
-
-            // List comprehhension to filter for events of the specified user
-            return allEvents
-                .Where(e =>
-                    (e.BeforeChange?.PersonalNumber == personalNumber) ||
-                    (e.AfterChange?.PersonalNumber == personalNumber))
-                .OrderByDescending(e => e.Timestamp)
-                .ToList();
-        }
-
-        /*
         Returns changed attributes of previously and after changed contact attributes - List of tuples
 
         @parameter: before (Contact)
@@ -93,29 +77,41 @@ namespace ContactManager.HistoryWin
 
         @return: changes (List of tuples)
         */
-        public static List<(string Field, string OldValue, string NewValue)> GetChanges(Contact before, Contact after)
+        public static List<(string Field, string OldValue, string NewValue)> GetChanges(Person before, Person after)
         {
             var changes = new List<(string, string, string)>();
+            if (before == null || after == null) return changes; // failsave
 
-            if (before == null || after == null) return changes;
+            // Detect type change e. g Trainee has been changed to employee
+            if (before.GetType() != after.GetType())
+            {
+                changes.Add(("Type", before.GetType().Name, after.GetType().Name));
+            }
 
-            var props = typeof(Contact).GetProperties();
+            // get properties of before object
+            var beforeProps = before.GetType().GetProperties();
+            var afterProps = after.GetType().GetProperties();
 
-            // generates tuples of changes attributes
-            foreach (var prop in props)
+            // only compare properties that exist in both objects
+            var commonProps = beforeProps
+                .Where(bp => afterProps.Any(ap => ap.Name == bp.Name))
+                .ToList();
+
+            // gets changed attributes and prepares it for the output
+            foreach (var prop in commonProps)
             {
                 var oldVal = prop.GetValue(before)?.ToString() ?? "";
-                var newVal = prop.GetValue(after)?.ToString() ?? "";
+                var newVal = after.GetType().GetProperty(prop.Name)?.GetValue(after)?.ToString() ?? "";
 
                 if (oldVal != newVal)
                 {
+                    // add the changes list
                     changes.Add((prop.Name, oldVal, newVal));
                 }
             }
 
             return changes;
         }
-
 
         /*
         Automatically resizes columsn of the listview
