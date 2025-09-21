@@ -351,7 +351,7 @@ namespace ContactManager.NewContactWin
                 current_contact.Status = "active";
             }
 
-            btnActivate.Text = $"{(current_contact.Status == "active" ? "deactive" : "active")}";
+            btnActivate.Text = $"{(current_contact.Status == "Active" ? "Deactive" : "Active")}";
 
             //changing the state showed in dropdown menu
             CmbStatus.Text = $"{current_contact.Status}";
