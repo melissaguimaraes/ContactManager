@@ -23,6 +23,8 @@ namespace ContactManager
             this.AcceptButton = btnLogin;
         }
 
+        // UI ACTIONS //
+
         /*
         Button for getting user credentials and check if correct -> login
 
@@ -31,6 +33,7 @@ namespace ContactManager
         */
         private void btnLogin_Click(object sender, EventArgs e)
         {
+
             lblError.Text = "";
             var user = txtUser.Text.Trim();
             var pass = txtPass.Text;
@@ -59,7 +62,7 @@ namespace ContactManager
         }
 
         /*
-        Toggles password visability
+        Toggles password visibility
 
         @parameter: sender
         @parameter: e (event)
@@ -70,7 +73,16 @@ namespace ContactManager
             txtPass.Update();
         }
 
-        
+        /*
+        displays password in cleartext
+
+        @parameter: sender
+        @parameter: e (event)
+        */
+        private void chkShow_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPass.UseSystemPasswordChar = !chkShow.Checked;
+        }
     }
 }
 

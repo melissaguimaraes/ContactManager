@@ -1,25 +1,25 @@
 ﻿using ContactManager.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace ContactManager.Helper
 {
+    // singleton class to handle contact related methods and data which is being stored locally
     internal class ContactHandler
     {
-        private static ContactHandler _contactHandler = new ContactHandler();
+        private static readonly ContactHandler _contactHandler = new ContactHandler();
+        HistoryHandler historyHandler = HistoryHandler.GetHistoryHandler();
+        ActivityHandler activityHandler = ActivityHandler.GetActivityHandler();
         // local path to contacts.json
-        private static string contact_path = "Data/contacts.json";
+        private static string contacts_path = "Data/contacts.json";
 
         private ContactHandler() { }
 
         /*
-        retunrns singelton inctance of ContactHandler Object
+        retunrns singelton instance of ContactHandler Object
 
         @return: _contactHandler
         */
@@ -33,145 +33,112 @@ namespace ContactManager.Helper
 
         @return: Lists<Contact>
         */
-        public List<Contact> LoadContacts()
+        public List<Person> LoadContacts()
         {
-            if (!File.Exists(contact_path))
-                return new List<Contact>();
-
-            string json = File.ReadAllText(contact_path);
-            
-            // json serialize options for converting DateTime in specific date format (yyyy-MM-dd)
-            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true, Converters = { new DateOnlyJsonConverter() } };
-
-            return JsonSerializer.Deserialize<List<Contact>>(json, options) ?? new List<Contact>();
+            return FileHandler.GetObjectsAsList<Person>(contacts_path);
         }
 
-        /*
-        Saves List of contacts as new json content and saves it to file
-
-        @parameter: contacts
-        */
-        public void SaveContacts(List<Contact> contacts)
+        public Employee GetAdminByUsername(string username)
         {
-            // options for JSON Identation
-            var options = new JsonSerializerOptions{ WriteIndented = true,Converters = { new DateOnlyJsonConverter() }};
+            List<Employee> contacts = FileHandler.GetObjectsAsList<Person>(contacts_path).OfType<Employee>().ToList();
 
-            string json = JsonSerializer.Serialize(contacts, options);
-
-            File.WriteAllText(contact_path, json);
+            return contacts.FirstOrDefault(c => c.Username.Equals(username) && c.Status && c.IsAdmin);
         }
-        
+
+
+        // TODO: To be deleted - deprecated
+        ///*
+        //Saves List of contacts as new json content and saves it to file
+
+        //@parameter: contacts
+        //*/
+        //public void SaveContacts(List<Person> contacts)
+        //{
+        //    var path = contacts_path;
+
+        //    // serialize with type information
+        //    var settings = new JsonSerializerSettings
+        //    {
+        //        TypeNameHandling = TypeNameHandling.Auto,
+        //        Formatting = Formatting.Indented
+        //    };
+
+        //    string json = JsonConvert.SerializeObject(contacts, settings);
+        //    File.WriteAllText(path, json);
+        //}
+
         /*
         Adds new contact
 
         @parameter: newContact
-        @return: void
         */
-        public void AddContact(Contact newContact)
+        public void AddContact(Person newContact)
         {
-            var contacts = LoadContacts();
 
-            // gets last element of ordered json file and gets current max id/number
-            int maxNumber = int.Parse(contacts[contacts.Count - 1].PersonalNumber);
+            List<Person> contacts = FileHandler.GetObjectsAsList<Person>(contacts_path);
 
-            // Creates new contact with (current max number) + 1 
-            // leading digits with zeros
-            newContact.PersonalNumber = (maxNumber + 1).ToString("D4");
+            // based on contact type sets prefix for ID
+            string prefix = newContact switch
+            {
+                Employee _ => "E-",
+                Customer _ => "C-",
+                _ => "E-"
+            };
 
-            // add new contact to current list
-            contacts.Add(newContact);
+            // returns current max id for either customer or employee
+            int maxNumber = contacts
+                .Select(c => c.PersonalNumber)
+                .Where(id => !string.IsNullOrEmpty(id) && id.StartsWith(prefix))
+                .Select(id => new string(id.Where(char.IsDigit).ToArray()))
+                .Where(digits => int.TryParse(digits, out _))
+                .Select(int.Parse)
+                .DefaultIfEmpty(0)
+                .Max();
 
-            SaveContacts(contacts);
+            var path = contacts_path;
+
+            // passes generated contact id
+            newContact.PersonalNumber = prefix + (maxNumber + 1).ToString("D4");
+
+            FileHandler.AddObjectToFile<Person>(contacts_path, newContact);
+
         }
 
         /*
         Update existing contact
 
         @parameter: updatedContact
-        @return: void
         */
-        public void UpdateContact(Contact updatedContact)
+        public void UpdateContact(Person updatedContact)
         {
 
-            var contacts = LoadContacts();
+            List<Person> contacts = LoadContacts();
 
-            // gets position of the contact which will be updated
             var index = contacts.FindIndex(c => c.PersonalNumber == updatedContact.PersonalNumber);
 
-            // throws exception if employe is not in list
             if (index == -1)
                 throw new InvalidOperationException("Contact not found for update.");
 
-            // updates contact
             contacts[index] = updatedContact;
-
-            SaveContacts(contacts);
+            
+            FileHandler.WriteObjectsToFile(contacts_path, contacts);
         }
 
         /*
-        Delete contact
+        Deletes contact and all related contetn (activities, history)
 
         @parameter: deletesContact
-        @return: void
         */
-        public void DeleteContact(Contact deleteContact)
+        public void DeleteContact(Person deleteContact)
         {
-            List<Contact> contacts = LoadContacts();
+            List<Person> contacts = LoadContacts();
+            contacts.RemoveAll(c => c.PersonalNumber == deleteContact.PersonalNumber);
 
-            // search algo to find contact in imported list
-            for (int i = 0; i < contacts.Count; i++)
-            {
-                // removes contact at the found postion
-                if (deleteContact.PersonalNumber == contacts[i].PersonalNumber)
-                {
-                    contacts.RemoveAt(i);
-                }
-            }
+            // deletes History and Activities for contact
+            historyHandler.DeleteHistory(deleteContact);
+            activityHandler.DeleteActivityComments(deleteContact);
 
-            SaveContacts(contacts);
-
+            FileHandler.WriteObjectsToFile(contacts_path, contacts);
         }
     }
-}
-
-
-// custom Json Serializer to convert dates into datetime format  (yyyy-MM-dd)
-public class DateOnlyJsonConverter : JsonConverter<DateOnly?>
-{
-    /*
-        Reads a nullable DateOnly value from JSON.
-
-        @parameter: reader
-        @parameter: typeToConvert
-        @parameter: options
-    
-        @return: DateOnly? - parsed date if valid, otherwise null
-    */
-    public override DateOnly? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-    {
-        if (reader.TokenType == JsonTokenType.String &&
-            DateOnly.TryParse(reader.GetString(), out var date))
-        {
-            return date;
-        }
-        return null;
-    }
-
-    /*
-        Writes a nullable DateOnly value to JSON.
-
-        @parameter: writer
-        @parameter: value
-        @parameter: options
-    
-        @return: void
-    */
-    public override void Write(Utf8JsonWriter writer, DateOnly? value, JsonSerializerOptions options)
-    {
-        if (value.HasValue)
-            writer.WriteStringValue(value.Value.ToString("yyyy-MM-dd"));
-        else
-            writer.WriteNullValue();
-    }
-
 }

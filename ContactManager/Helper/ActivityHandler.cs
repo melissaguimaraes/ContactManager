@@ -8,9 +8,7 @@ using System.Threading.Tasks;
 
 namespace ContactManager.Helper
 {
-    /*
-     class for activity management
-     */
+    // class for activity management
     internal class ActivityHandler
     {
         private static ActivityHandler _activityHandler = new ActivityHandler();
@@ -37,9 +35,9 @@ namespace ContactManager.Helper
          */
         public List<ActivityComment> GetActivityComments()
         {
-            string json = File.ReadAllText(activity_path);
+            // string json = File.ReadAllText(activity_path);
 
-            List<ActivityComment> activity = JsonSerializer.Deserialize<List<ActivityComment>>(json);
+            List<ActivityComment> activity = FileHandler.GetObjectsAsList<ActivityComment>(activity_path);
 
             return activity;
         }
@@ -50,9 +48,10 @@ namespace ContactManager.Helper
         @parameter: contact
         @return: ContactComments (sorted)
          */
-        public List<ActivityComment> GetActivityComments(Contact contact)
+        public List<ActivityComment> GetActivityComments(Person contact)
         {
             List<ActivityComment> ContactComments = new List<ActivityComment>();
+            
             List<ActivityComment> AllComments = GetActivityComments();
 
             foreach (ActivityComment comment in AllComments)
@@ -79,21 +78,35 @@ namespace ContactManager.Helper
             comments.Add(activityComment);
 
             WriteToFile(comments);
-
         }
 
         /*
-        writes and converts comment in json file
+         Deletes all activities for a specific contact and updates the JSON file
+
+         @parameter: contact
+        */
+        public void DeleteActivityComments(Person contact)
+        {
+            // Get all comments
+            List<ActivityComment> allComments = GetActivityComments();
+
+            // Keep only comments that do NOT belong to this contact
+            List<ActivityComment> updatedComments = allComments
+                .Where(c => c.ContactID != contact.PersonalNumber)
+                .ToList();
+
+            // Write the updated list back to file
+            WriteToFile(updatedComments);
+        }
+
+        /*
+        writes comment into json file
          
         @parameter: comments
          */
         public void WriteToFile(List<ActivityComment> comments)
         { 
-            JsonSerializerOptions options = new JsonSerializerOptions { WriteIndented=true};
-
-            string json = JsonSerializer.Serialize(comments, options);
-
-            File.WriteAllText(activity_path, json);
+            FileHandler.WriteObjectsToFile<ActivityComment>(activity_path, comments);
         }
 
     }

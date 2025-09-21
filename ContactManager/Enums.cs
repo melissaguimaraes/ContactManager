@@ -12,4 +12,17 @@ namespace ContactManager
         Edit,
         AddNew
     }
+
+    public enum ContactType 
+    { 
+        Employee, 
+        Customer 
+        // Trainee 
+    }
+
+    public enum ContactStatus
+    {
+        Active,
+        Passive
+    }
 }

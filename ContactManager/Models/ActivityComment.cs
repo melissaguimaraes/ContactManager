@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ContactManager.Models
 {
+    // class to track activities created by admins
     public class ActivityComment
     {
-
         public string Comment { get; set; }
         public string Commentor { get; set; }
         public DateTime Timestamp { get; set; }

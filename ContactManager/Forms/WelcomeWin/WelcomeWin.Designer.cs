@@ -26,6 +26,7 @@
         //the contents of this method with the code editor
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WelcomeWin));
             lblTitle = new Label();
             lblUserNameTitle = new Label();
             txtUser = new TextBox();
@@ -34,90 +35,126 @@
             chkShow = new CheckBox();
             btnLogin = new Button();
             lblError = new Label();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            lblTitle.Location = new Point(312, 39);
+            lblTitle.Font = new Font("Segoe UI", 40F, FontStyle.Bold);
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(68, 44);
+            lblTitle.Margin = new Padding(4, 0, 4, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(295, 46);
+            lblTitle.Size = new Size(693, 106);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Contact Manager";
             // 
             // lblUserNameTitle
             // 
             lblUserNameTitle.AutoSize = true;
-            lblUserNameTitle.Location = new Point(47, 301);
+            lblUserNameTitle.ForeColor = Color.White;
+            lblUserNameTitle.Location = new Point(68, 291);
+            lblUserNameTitle.Margin = new Padding(4, 0, 4, 0);
             lblUserNameTitle.Name = "lblUserNameTitle";
-            lblUserNameTitle.Size = new Size(79, 20);
+            lblUserNameTitle.Size = new Size(96, 25);
             lblUserNameTitle.TabIndex = 1;
             lblUserNameTitle.Text = "User name";
             // 
             // txtUser
             // 
-            txtUser.Location = new Point(47, 325);
-            txtUser.Margin = new Padding(3, 4, 3, 4);
+            txtUser.Location = new Point(68, 321);
+            txtUser.Margin = new Padding(4, 5, 4, 5);
             txtUser.Name = "txtUser";
-            txtUser.Size = new Size(114, 27);
+            txtUser.Size = new Size(142, 31);
             txtUser.TabIndex = 2;
             // 
             // lblPassTitle
             // 
             lblPassTitle.AutoSize = true;
-            lblPassTitle.Location = new Point(47, 387);
+            lblPassTitle.ForeColor = Color.White;
+            lblPassTitle.Location = new Point(68, 399);
+            lblPassTitle.Margin = new Padding(4, 0, 4, 0);
             lblPassTitle.Name = "lblPassTitle";
-            lblPassTitle.Size = new Size(70, 20);
+            lblPassTitle.Size = new Size(87, 25);
             lblPassTitle.TabIndex = 3;
             lblPassTitle.Text = "Password";
             // 
             // txtPass
             // 
-            txtPass.Location = new Point(47, 411);
-            txtPass.Margin = new Padding(3, 4, 3, 4);
+            txtPass.Location = new Point(68, 429);
+            txtPass.Margin = new Padding(4, 5, 4, 5);
             txtPass.Name = "txtPass";
-            txtPass.Size = new Size(114, 27);
+            txtPass.Size = new Size(142, 31);
             txtPass.TabIndex = 4;
             // 
             // chkShow
             // 
             chkShow.AutoSize = true;
-            chkShow.Location = new Point(168, 416);
-            chkShow.Margin = new Padding(3, 4, 3, 4);
+            chkShow.ForeColor = Color.White;
+            chkShow.Location = new Point(237, 431);
+            chkShow.Margin = new Padding(4, 5, 4, 5);
             chkShow.Name = "chkShow";
-            chkShow.Size = new Size(134, 24);
+            chkShow.Size = new Size(164, 29);
             chkShow.TabIndex = 5;
             chkShow.Text = "Show password";
             chkShow.UseVisualStyleBackColor = true;
-            chkShow.CheckedChanged += chkShow_CheckedChanged_1;
+            chkShow.CheckedChanged += chkShow_CheckedChanged;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(47, 496);
-            btnLogin.Margin = new Padding(3, 4, 3, 4);
+            btnLogin.BackColor = Color.FromArgb(119, 141, 169);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(68, 535);
+            btnLogin.Margin = new Padding(4, 5, 4, 5);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(86, 31);
+            btnLogin.Size = new Size(108, 39);
             btnLogin.TabIndex = 6;
             btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
             // lblError
             // 
             lblError.AutoSize = true;
             lblError.ForeColor = Color.Red;
-            lblError.Location = new Point(288, 504);
+            lblError.Location = new Point(369, 545);
+            lblError.Margin = new Padding(4, 0, 4, 0);
             lblError.Name = "lblError";
-            lblError.Size = new Size(0, 20);
+            lblError.Size = new Size(0, 25);
             lblError.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(768, 56);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(95, 94);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(795, 716);
+            label1.Name = "label1";
+            label1.Size = new Size(184, 25);
+            label1.TabIndex = 9;
+            label1.Text = "by Kyra und Melissa™";
             // 
             // WelcomeWin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Control;
-            ClientSize = new Size(914, 600);
+            BackColor = Color.FromArgb(27, 38, 59);
+            ClientSize = new Size(991, 750);
+            Controls.Add(label1);
+            Controls.Add(pictureBox1);
             Controls.Add(lblError);
             Controls.Add(btnLogin);
             Controls.Add(chkShow);
@@ -126,9 +163,13 @@
             Controls.Add(txtUser);
             Controls.Add(lblUserNameTitle);
             Controls.Add(lblTitle);
-            Margin = new Padding(3, 4, 3, 4);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 5, 4, 5);
+            MaximizeBox = false;
             Name = "WelcomeWin";
             StartPosition = FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -143,5 +184,7 @@
         private CheckBox chkShow;
         private Button btnLogin;
         private Label lblError;
+        private PictureBox pictureBox1;
+        private Label label1;
     }
 }
